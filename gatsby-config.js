@@ -189,10 +189,10 @@ module.exports = {
         fonts: [
           {
             family: `Open Sans`,
-            variants: [`400`, `700`]
-          },
-        ],
-      },
+            variants: ['300', '500', '700']
+          }
+        ]
+      }
     }
   ]
 }
