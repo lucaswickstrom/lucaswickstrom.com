@@ -1,189 +1,285 @@
-import React from 'react'
-import { Link } from 'gatsby'
-import Helmet from 'react-helmet'
-import { Global, css } from '@emotion/core'
+import React from 'react';
+import { Helmet } from 'react-helmet';
 
-import { Company } from '../components/Company'
-import { Paragraph } from '../components/Paragraph'
+import laykeIcon from '../assets/layke.svg';
+import nickamedIcon from '../assets/nicknamed.svg';
+import ssfIcon from '../assets/ssf.svg';
+import sveaIcon from '../assets/svea.svg';
+import wellrIcon from '../assets/wellr.svg';
+import {
+  // Ad,
+  Company,
+  Container,
+  Job,
+  Layout,
+  Links,
+  Profile,
+  Tags,
+  Time,
+  Wrapper,
+} from '../components';
 
-export const IndexPage = () => (
-  <>
-    <h2>Hi people</h2>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <p>
-      <Link to="/another-page/">Go to another page</Link>
-    </p>
-    <p>
-      <Link to="/all/">See content generated from Markdown files</Link>
-    </p>
-  </>
-)
+export default function IndexPage() {
+  return (
+    <>
+      <Helmet>
+        <title>Lucas Wickström - Web developer</title>
+      </Helmet>
+      <Layout>
+        <Wrapper>
+          <Profile />
 
-const LayoutIndexPage = () => (
-  <>
-    <Helmet
-      // titleTemplate={`%s - ${data.site.siteMetadata.title}`}
-      // defaultTitle={data.site.siteMetadata.title}
-      meta={[
-        {
-          name: 'description',
-          content: 'Demo site for a Gatsby Starter in TypeScript'
-        },
-        {
-          name: 'keywords',
-          content: 'gatsby, gatsbyjs, sample, demo, typescript'
-        }
-      ]}
-    />
-    <Global
-      styles={css`
-        * {
-          box-sizing: border-box;
-        }
+          <Container line>
+            <h1>Hi, I&apos;m Lucas</h1>
+            <p>
+              I&apos;m a fullstack web developer living in Stockholm, Sweden
+              specializing in building (and occasionally designing) exceptional
+              websites, applications, and everything in between.
+            </p>
+          </Container>
 
-        html {
-          font-size: 12px;
-          font-weight: 300;
-          background-color: #d8d8d8;
+          {/* <Container line>
+          <Ad>
+            <h3>Your project here?</h3>
+            <p>
+              Do you want to include me in your project? Get in touch at{' '}
+              <a href="mailto:lucas@lucaswickstrom.com">
+                lucas@lucaswickstrom.com
+              </a>
+            </p>
+          </Ad>
+        </Container> */}
 
-          @media (min-width: 768px) {
-            font-size: 16px;
-          }
-        }
+          <Company>
+            <>
+              <h2>Polytop</h2>
+              <Time start={new Date('2019-12-20')} />
+            </>
+          </Company>
 
-        body {
-          font-family: 'Open Sans', sans-serif;
-        }
+          <Job line>
+            <h3>
+              <a href="https://prod.spela.schack.se">Schackfyran online</a>
+            </h3>
+            <Time start={new Date('2020-03-10')} />
+          </Job>
+          <Container line>
+            <p>
+              With the isolation due to covid-19 the Swedish Chess Federation
+              ask me to futher develop the Yes2Chess platform to handle more
+              types of tournaments with more players.
+            </p>
+          </Container>
+          <Container line>
+            <Links>
+              <Links>
+                <Tags
+                  tags={[
+                    'Node.js',
+                    'Typescript',
+                    'GraphQL',
+                    'MongoDB',
+                    'React.js',
+                    'Redis',
+                    'Next.js',
+                  ]}
+                />
+              </Links>
+            </Links>
+          </Container>
 
-        h2 {
-          margin: 0 0 2px;
-          font-weight: 500;
-        }
-      `}
-    />
-    <div
-      css={{
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        maxWidth: 1030,
-        padding: '0 16px',
-        margin: '0 auto',
+          <Job icon={wellrIcon} line>
+            <h3>
+              <a href="https://wellr.se/">Wellr App</a>
+            </h3>
+            <Time start={new Date('2020-09-10')} />
+          </Job>
+          <Container line>
+            <p>Maintaing this awesome health app</p>
+          </Container>
+          <Container line>
+            <Links>
+              <Tags tags={['React Native']} />
+            </Links>
+          </Container>
 
-        '@media (min-width: 768px)': {
-          padding: '0 48px'
-        }
-      }}
-    >
-      {/* <div
-        css={{
-          position: 'absolute',
-          top: 150 / 2 + 40,
-          left: '16px',
-          right: '50%',
-          height: 1,
-          backgroundColor: '#979797'
-        }}
-      /> */}
+          <Company icon={nickamedIcon}>
+            <>
+              <h2>
+                <a href="https://nicknamed.se">Nicknamed</a>
+              </h2>
+              <Time start={new Date('2018-06-01')} />
+            </>
+          </Company>
 
-      {/* <div
-        css={{
-          position: 'absolute',
-          top: 150 / 2 + 40,
-          left: '16px',
-          bottom: 0,
-          width: 1,
-          backgroundColor: '#979797'
-        }}
-      /> */}
+          <Job icon={sveaIcon} line>
+            <>
+              <h3>
+                <a href="https://www.svea.com">Svea Ekonomi</a>
+              </h3>
+              <Time start={new Date('2019-10-25')} />
+            </>
+          </Job>
+          <Container line>
+            <p>
+              Working with 2 projects on Svea WebPay. A back office system for
+              handling payment fraud. And a payment and order management web app
+              for customers.
+            </p>
+          </Container>
+          <Container line>
+            <Links>
+              <Tags tags={['Typescript', 'Vue.js', 'Vuex', 'Webpack']} />
+            </Links>
+          </Container>
 
-      <div
-        css={{
-          position: 'relative',
-          backgroundColor: '#FFF',
-          border: '1px solid #979797',
-          width: 150,
-          height: 150,
-          borderRadius: '50%',
-          marginTop: 96,
-          marginBottom: -150 / 2
-        }}
-      />
-      <div
-        css={{
-          width: '50%',
-          borderTop: '1px solid #979797',
-          borderLeft: '1px solid #979797',
-          height: 75 + 44,
-          alignSelf: 'flex-start'
-        }}
-      />
+          <Job icon={sveaIcon} line>
+            <>
+              <h3>
+                <a href="https://www.svea.com">Svea Ekonomi</a>
+              </h3>
+              <Time
+                start={new Date('2019-03-16')}
+                stop={new Date('2019-08-31')}
+              />
+            </>
+          </Job>
+          <Container line>
+            <p>
+              Helped Svea with a major design refresh of their marketing site
+              svea.com.
+            </p>
+          </Container>
+          <Container line>
+            <Links>
+              <Tags
+                tags={[
+                  'Episerver',
+                  'AngularJS',
+                  'SEO',
+                  'Google Tag Manager',
+                  'Google Analytics',
+                  'Google Search Console',
+                ]}
+              />
+            </Links>
+          </Container>
 
-      <div
-        css={{
-          width: '100%',
-          padding: 16,
-          borderLeft: '1px solid #979797'
-        }}
-      >
-        <p
-          css={{
-            maxWidth: 600,
-            margin: '0 auto',
-            fontSize: '1.5rem',
-            color: '#424242'
-          }}
-        >
-          Far far away, behind the word mountains, far from the countries Vokalia and Cons
-        </p>
-      </div>
+          <Job icon={laykeIcon} line>
+            <>
+              <h3>
+                <a href="https://layke.io">Layke</a>
+              </h3>
+              <Time
+                start={new Date('2018-11-05')}
+                stop={new Date('2019-03-15')}
+              />
+            </>
+          </Job>
+          <Container line>
+            <p>
+              Dashboard with components for searching and aggregating tabular
+              data combined with dynamic graphs.
+            </p>
+          </Container>
+          <Container line>
+            <Links>
+              <Tags tags={['Typescript', 'React.js', 'D3.js']} />
+            </Links>
+          </Container>
 
-      <div
-        css={{
-          width: '100%',
-          padding: 16,
-          borderLeft: '1px solid #979797'
-        }}
-      >
-        <div
-          css={{
-            backgroundColor: '#FFF',
-            border: '1px solid #979797',
-            width: 92,
-            height: 92,
-            borderRadius: '50%',
-            marginLeft: -16 - 92 / 2,
-            marginBottom: -96
-          }}
-        />
-        <div
-          css={{
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'center',
-            maxWidth: 600 + 48 * 2,
-            minHeight: 96,
-            color: '#424242',
-            margin: '0 auto',
-            padding: '0 48px'
-          }}
-        >
-          <h2>h2 subheadline</h2>
-          <span>jun 2018–nu • 1 år 3 månader</span>
-        </div>
-      </div>
-      <Company>
-        <>
-          <h2>h2 subheadline</h2>
-          <span>jun 2018–nu • 1 år 3 månader</span>
-        </>
-      </Company>
-      <Paragraph>
-        Far far away, behind the word mountains, far from the countries Vokalia and Cons
-      </Paragraph>
-    </div>
-  </>
-)
+          <Job icon={sveaIcon} line>
+            <>
+              <h3>Svea Ekonomi</h3>
+              <Time
+                start={new Date('2018-06-01')}
+                stop={new Date('2018-11-04')}
+              />
+            </>
+          </Job>
+          <Container line>
+            <p>
+              Built an animation and video heavy marketing website for a
+              upcoming product.
+            </p>
+          </Container>
+          <Container line>
+            <Links>
+              <Tags
+                tags={[
+                  'Typescript',
+                  'React.js',
+                  'Gatsby.js',
+                  'SEO',
+                  'Adaptive Streaming',
+                ]}
+              />
+            </Links>
+          </Container>
 
-export default LayoutIndexPage
+          <Company icon={ssfIcon}>
+            <>
+              <h2>
+                <a href="https://schack.se">Swedish Chess Federation</a>
+              </h2>
+              <Time
+                start={new Date('2015-05-25')}
+                stop={new Date('2018-05-31')}
+              />
+            </>
+          </Company>
+
+          <Job line>
+            <h3>
+              <a href="https://yes2chess.se">Yes2Chess</a>
+            </h3>
+          </Job>
+          <Container line>
+            <p>Realtime chess platform for Swedish students.</p>
+          </Container>
+          <Container line>
+            <Links>
+              <Tags tags={['Node.js', 'MongoDB', 'Polymer']} />
+            </Links>
+          </Container>
+
+          <Job line>
+            <h3>
+              <a href="https://member.schack.se">
+                Member and tournament system
+              </a>
+            </h3>
+          </Job>
+          <Container line>
+            <p>
+              Further development of existing systems, such as payment solution
+              for tournaments and a new rest api.
+            </p>
+          </Container>
+          <Container line>
+            <Links>
+              <Tags tags={['Java', 'MySQL', 'jQuery']} />
+            </Links>
+          </Container>
+
+          <Job>
+            <h3>
+              <a href="https://schack.se">Schack.se</a>
+            </h3>
+          </Job>
+          <Container>
+            <p>
+              Maintained the Swedish Chess Federation&apos;s website which has
+              over 10,000 daily pageviews
+            </p>
+          </Container>
+          <Container>
+            <Links>
+              <Tags tags={['PHP', 'MySQL', 'Wordpress', 'jQuery']} />
+            </Links>
+          </Container>
+        </Wrapper>
+      </Layout>
+    </>
+  );
+}

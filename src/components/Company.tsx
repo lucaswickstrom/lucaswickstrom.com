@@ -1,24 +1,44 @@
-import React from 'react'
+import React from 'react';
 
-export const Company = ({ children }: { children: React.ReactNode }) => (
+import { borderColor } from './Layout';
+
+export const Company: React.FC<{
+  icon?: string;
+}> = ({ icon, children }) => (
   <div
     css={{
       width: '100%',
-      padding: '0 16px',
-      borderLeft: '1px solid #979797'
+      padding: '48px 16px 0',
+      borderLeft: `1px solid ${borderColor}`,
     }}
   >
-    <div
-      css={{
-        backgroundColor: '#FFF',
-        border: '1px solid #979797',
-        width: 92,
-        height: 92,
-        borderRadius: '50%',
-        marginLeft: -16 - 92 / 2,
-        marginBottom: -96
-      }}
-    />
+    {icon ? (
+      <img
+        src={icon}
+        css={{
+          display: 'block',
+          backgroundColor: '#FFF',
+          width: 92,
+          height: 92,
+          borderRadius: '50%',
+          marginLeft: -16 - 92 / 2,
+          marginBottom: -96,
+        }}
+      />
+    ) : (
+      <div
+        css={{
+          display: 'block',
+          backgroundColor: '#FFF',
+          width: 92,
+          height: 92,
+          borderRadius: '50%',
+          marginLeft: -16 - 92 / 2,
+          marginBottom: -96,
+          border: `1px solid ${borderColor}`,
+        }}
+      />
+    )}
     <div
       css={{
         display: 'flex',
@@ -26,12 +46,11 @@ export const Company = ({ children }: { children: React.ReactNode }) => (
         justifyContent: 'center',
         maxWidth: 600 + 48 * 2,
         minHeight: 96,
-        color: '#424242',
         margin: '0 auto',
-        padding: '0 48px'
+        padding: '0 48px',
       }}
     >
       {children}
     </div>
   </div>
-)
+);
