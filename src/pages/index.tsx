@@ -30,7 +30,7 @@ export default function IndexPage() {
   return (
     <>
       <Helmet>
-        <title>Lucas Wickström - Web developer</title>
+        <title>Lucas Wickström - Freelance Web Developer @ Polytop</title>
         <meta name="description" content={description} />
       </Helmet>
       <Layout>
