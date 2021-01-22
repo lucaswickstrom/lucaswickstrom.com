@@ -16,7 +16,10 @@ export const Job: React.FC<{
         '&::before': {
           content: `''`,
           display: 'block',
-          width: 16 + 32 + 64 / 2,
+          width: 16 + 32,
+          [bigScreen]: {
+            width: 16 + 32 + 64 / 2,
+          },
           height: 64 / 2 + 48,
           marginTop: -48,
           marginBottom: (icon ? -64 : -12) / 2,
@@ -41,7 +44,9 @@ export const Job: React.FC<{
           width: 64,
           height: 64,
           borderRadius: '50%',
-          marginLeft: 32,
+          [bigScreen]: {
+            marginLeft: 32,
+          },
           marginBottom: -64,
         }}
       />
@@ -53,7 +58,10 @@ export const Job: React.FC<{
           width: 12,
           height: 12,
           borderRadius: '50%',
-          marginLeft: 64,
+          marginLeft: 32 - 12 / 2,
+          [bigScreen]: {
+            marginLeft: 64 - 12 / 2,
+          },
           marginBottom: -36,
         }}
       />
@@ -66,9 +74,10 @@ export const Job: React.FC<{
         maxWidth: 600 + 112 * 2,
         minHeight: 64,
         margin: '0 auto',
-        paddingLeft: 112,
+        paddingLeft: 64 + 16,
 
         [bigScreen]: {
+          paddingLeft: 112,
           paddingRight: 112,
         },
       }}

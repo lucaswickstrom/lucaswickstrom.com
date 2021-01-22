@@ -11,7 +11,7 @@ export const Layout: React.FC = ({ children }) => (
   <>
     <Helmet>
       <link
-        href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;500&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600&display=swap"
         rel="stylesheet"
       />
     </Helmet>
@@ -37,13 +37,13 @@ export const Layout: React.FC = ({ children }) => (
           color: fontColor,
         },
 
-        'h2, h3': {
+        'h1, h2, h3': {
           margin: '0 0 4px',
-          fontWeight: 500,
+          fontWeight: 600,
         },
 
         'h2 + span, h3 + span': {
-          fontWeight: 100,
+          fontWeight: 300,
         },
 
         p: {

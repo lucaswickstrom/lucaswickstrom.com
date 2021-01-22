@@ -35,12 +35,10 @@ export const Tags: React.FC<{ tags: (keyof typeof tagsObject)[] }> = ({
 }) => (
   <>
     {tags.map((key, index) => (
-      <>
+      <React.Fragment key={key}>
         {index ? ', ' : ''}
-        <a key={key} href={tagsObject[key]}>
-          {key}
-        </a>
-      </>
+        <a href={tagsObject[key]}>{key}</a>
+      </React.Fragment>
     ))}
   </>
 );
