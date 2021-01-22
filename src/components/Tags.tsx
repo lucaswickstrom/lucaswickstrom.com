@@ -27,6 +27,7 @@ const tagsObject = {
   PHP: 'https://www.php.net/',
   Wordpress: 'https://wordpress.org/',
   GraphQL: 'https://graphql.org/',
+  Redux: 'https://redux.js.org/',
 };
 
 export const Tags: React.FC<{ tags: (keyof typeof tagsObject)[] }> = ({

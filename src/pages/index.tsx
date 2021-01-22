@@ -1,13 +1,13 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 
+import imageIcon from '../assets/image.svg';
 import laykeIcon from '../assets/layke.svg';
 import nickamedIcon from '../assets/nicknamed.svg';
 import ssfIcon from '../assets/ssf.svg';
 import sveaIcon from '../assets/svea.svg';
 import wellrIcon from '../assets/wellr.svg';
 import {
-  // Ad,
   Company,
   Container,
   Job,
@@ -19,11 +19,19 @@ import {
   Wrapper,
 } from '../components';
 
+const description = `
+  I'm a highly ambitious, humble and hard-working fullstack web
+  developer living in Stockholm, Sweden specializing in building
+  (and occasionally designing) exceptional websites, applications,
+  and everything in between.
+`;
+
 export default function IndexPage() {
   return (
     <>
       <Helmet>
         <title>Lucas Wickström - Web developer</title>
+        <meta name="description" content={description} />
       </Helmet>
       <Layout>
         <Wrapper>
@@ -31,37 +39,39 @@ export default function IndexPage() {
 
           <Container line>
             <h1>Hi, I&apos;m Lucas</h1>
-            <p>
-              I&apos;m a fullstack web developer living in Stockholm, Sweden
-              specializing in building (and occasionally designing) exceptional
-              websites, applications, and everything in between.
-            </p>
+            <p>{description}</p>
           </Container>
 
-          {/* <Container line>
-          <Ad>
-            <h3>Your project here?</h3>
-            <p>
-              Do you want to include me in your project? Get in touch at{' '}
-              <a href="mailto:lucas@lucaswickstrom.com">
-                lucas@lucaswickstrom.com
-              </a>
-            </p>
-          </Ad>
-        </Container> */}
-
-          <Company>
+          <Company icon={imageIcon}>
             <>
               <h2>Polytop</h2>
               <Time start={new Date('2019-12-20')} />
             </>
           </Company>
 
-          <Job line>
+          <Job icon={wellrIcon} line>
+            <h3>
+              <a href="https://wellr.se/">Wellr App</a>
+            </h3>
+            <Time start={new Date('2020-09-10')} />
+          </Job>
+          <Container line>
+            <p>Maintaing this health app</p>
+          </Container>
+          <Container line>
+            <Links>
+              <Tags tags={['React Native', 'Redux']} />
+            </Links>
+          </Container>
+
+          <Job icon={ssfIcon} line>
             <h3>
               <a href="https://prod.spela.schack.se">Schackfyran online</a>
             </h3>
-            <Time start={new Date('2020-03-10')} />
+            <Time
+              start={new Date('2020-03-10')}
+              stop={new Date('2020-08-31')}
+            />
           </Job>
           <Container line>
             <p>
@@ -85,21 +95,6 @@ export default function IndexPage() {
                   ]}
                 />
               </Links>
-            </Links>
-          </Container>
-
-          <Job icon={wellrIcon} line>
-            <h3>
-              <a href="https://wellr.se/">Wellr App</a>
-            </h3>
-            <Time start={new Date('2020-09-10')} />
-          </Job>
-          <Container line>
-            <p>Maintaing this awesome health app</p>
-          </Container>
-          <Container line>
-            <Links>
-              <Tags tags={['React Native']} />
             </Links>
           </Container>
 
