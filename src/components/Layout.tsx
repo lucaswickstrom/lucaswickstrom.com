@@ -3,13 +3,9 @@ import React from 'react';
 import Helmet from 'react-helmet';
 
 export const bigScreen = '@media (min-width: 768px)';
-export const bgColor = '#fffbf3'; // '#d8d8d8'
+export const bgColor = '#fffbf3';
 export const borderColor = '#979797';
 const fontColor = '#424242';
-
-// export const bgColor = '#232323';
-// export const borderColor = '#424242';
-// const fontColor = '#FFF';
 
 export const Layout: React.FC = ({ children }) => (
   <>
@@ -84,7 +80,6 @@ export const Layout: React.FC = ({ children }) => (
               to: { transform: 'scaleX(1)' },
             })} .3s ease-in-out`,
           },
-          // },
         },
       }}
     />
