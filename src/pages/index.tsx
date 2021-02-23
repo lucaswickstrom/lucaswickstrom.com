@@ -306,20 +306,41 @@ export default function IndexPage() {
             </Links>
           </Container>
 
-          <Job>
+          <Job line>
             <h3>
               <a href="https://schack.se">Schack.se</a>
             </h3>
           </Job>
-          <Container>
+          <Container line>
             <p>
               I maintained the Swedish Chess Federation&apos;s website which had
               more than 10 000 daily pageviews.
             </p>
           </Container>
-          <Container>
+          <Container line>
             <Links>
               <Tags tags={['PHP', 'MySQL', 'Wordpress', 'jQuery']} />
+            </Links>
+          </Container>
+
+          <Company>
+            <>
+              <h2>Cloudlux</h2>
+              <Time
+                start={new Date('2010-05-25')}
+                stop={new Date('2015-05-24')}
+              />
+            </>
+          </Company>
+          <Container>
+            <p>
+              During my universities studies I had a sole proprietorship where I
+              took small web development jobs.
+            </p>
+          </Container>
+          <Container>
+            <Links>
+              <Tags tags={['PHP', 'MySQL', 'Wordpress', 'jQuery', 'Polymer']} />
             </Links>
           </Container>
         </Wrapper>
