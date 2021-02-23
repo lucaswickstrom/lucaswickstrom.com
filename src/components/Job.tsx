@@ -4,10 +4,19 @@ import { bigScreen, borderColor } from './Layout';
 
 const border = `1px solid ${borderColor}`;
 
-export const Job: React.FC<{
+type JobProps = {
   line?: boolean;
-  icon?: string;
-}> = ({ line = false, icon, children }) => (
+  imgProps?: {
+    icon: string;
+    alt: string;
+  };
+};
+
+export const Job: React.FC<JobProps> = ({
+  line = false,
+  imgProps,
+  children,
+}) => (
   <div
     css={[
       {
@@ -22,7 +31,7 @@ export const Job: React.FC<{
           },
           height: 64 / 2 + 48,
           marginTop: -48,
-          marginBottom: (icon ? -64 : -12) / 2,
+          marginBottom: (imgProps ? -64 : -12) / 2,
           marginLeft: -16,
           borderLeft: border,
           borderBottom: border,
@@ -36,9 +45,10 @@ export const Job: React.FC<{
       },
     ]}
   >
-    {icon ? (
+    {imgProps ? (
       <img
-        src={icon}
+        src={imgProps.icon}
+        alt={imgProps.alt}
         css={{
           display: 'block',
           width: 64,

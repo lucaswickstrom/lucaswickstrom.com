@@ -3,8 +3,8 @@ import React from 'react';
 import { borderColor } from './Layout';
 
 export const Company: React.FC<{
-  icon?: string;
-}> = ({ icon, children }) => (
+  imgProps?: { icon: string; alt: string };
+}> = ({ imgProps, children }) => (
   <div
     css={{
       width: '100%',
@@ -12,9 +12,10 @@ export const Company: React.FC<{
       borderLeft: `1px solid ${borderColor}`,
     }}
   >
-    {icon ? (
+    {imgProps ? (
       <img
-        src={icon}
+        src={imgProps.icon}
+        alt={imgProps.alt}
         css={{
           display: 'block',
           backgroundColor: '#FFF',

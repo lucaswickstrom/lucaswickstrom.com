@@ -43,14 +43,14 @@ export default function IndexPage() {
             <p>{description}</p>
           </Container>
 
-          <Company icon={imageIcon}>
+          <Company imgProps={{ icon: imageIcon, alt: 'Polytop' }}>
             <>
               <h2>Polytop</h2>
               <Time start={new Date('2019-12-20')} />
             </>
           </Company>
 
-          <Job icon={wellrIcon} line>
+          <Job imgProps={{ icon: wellrIcon, alt: 'Wellr' }} line>
             <h3>
               <a href="https://wellr.se/">Wellr App</a>
             </h3>
@@ -69,7 +69,7 @@ export default function IndexPage() {
             </Links>
           </Container>
 
-          <Job icon={ssfIcon} line>
+          <Job imgProps={{ icon: ssfIcon, alt: 'Sveriges Schackförbund' }} line>
             <h3>
               <a href="https://play.schackfyran.se">Schackfyran online</a>
             </h3>
@@ -103,7 +103,7 @@ export default function IndexPage() {
             </Links>
           </Container>
 
-          <Company icon={nickamedIcon}>
+          <Company imgProps={{ icon: nickamedIcon, alt: 'Nicknamed' }}>
             <>
               <h2>
                 <a href="https://nicknamed.se">Nicknamed</a>
@@ -112,7 +112,7 @@ export default function IndexPage() {
             </>
           </Company>
 
-          <Job icon={sveaIcon} line>
+          <Job imgProps={{ icon: sveaIcon, alt: 'Svea Ekonomi' }} line>
             <>
               <h3>
                 <a href="https://www.svea.com">Svea Ekonomi</a>
@@ -147,7 +147,7 @@ export default function IndexPage() {
             </Links>
           </Container>
 
-          <Job icon={sveaIcon} line>
+          <Job imgProps={{ icon: sveaIcon, alt: 'Svea Ekonomi' }} line>
             <>
               <h3>
                 <a href="https://www.svea.com">Svea Ekonomi</a>
@@ -187,7 +187,7 @@ export default function IndexPage() {
             </Links>
           </Container>
 
-          <Job icon={laykeIcon} line>
+          <Job imgProps={{ icon: laykeIcon, alt: 'Layke' }} line>
             <>
               <h3>
                 <a href="https://layke.io">Layke</a>
@@ -210,7 +210,7 @@ export default function IndexPage() {
             </Links>
           </Container>
 
-          <Job icon={sveaIcon} line>
+          <Job imgProps={{ icon: sveaIcon, alt: 'Svea Ekonomi' }} line>
             <>
               <h3>Svea Ekonomi</h3>
               <Time
@@ -239,7 +239,7 @@ export default function IndexPage() {
             </Links>
           </Container>
 
-          <Company icon={ssfIcon}>
+          <Company imgProps={{ icon: ssfIcon, alt: 'Sveriges Schackförbund' }}>
             <>
               <h2>
                 <a href="https://schack.se">Swedish Chess Federation</a>

@@ -2,7 +2,7 @@ import React from 'react';
 
 import githubIcon from '../assets/github.svg';
 import linkedinIcon from '../assets/linkedin.svg';
-import profilePhoto from '../assets/profile.png';
+import profilePhoto from '../assets/profile.jpg';
 import { borderColor, Container } from '.';
 
 const size = 192;
@@ -12,6 +12,7 @@ export const Profile: React.FC = () => (
   <>
     <img
       src={profilePhoto}
+      alt="Lucas Wickström"
       css={{
         position: 'relative',
         border,
