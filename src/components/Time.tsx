@@ -3,9 +3,11 @@ import React from 'react';
 const day = 1000 * 60 * 60 * 24;
 
 const getMonth = (date: Date) =>
-  date.toLocaleDateString('en-GB', {
-    month: 'short',
-  });
+  date
+    .toLocaleDateString('en-GB', {
+      month: 'short',
+    })
+    .substr(0, 3);
 
 const getMonthAndYear = (date: Date) =>
   `${getMonth(date)} ${date.getFullYear()}`;
