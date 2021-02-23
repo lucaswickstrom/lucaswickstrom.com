@@ -1,10 +1,12 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 
+import emailIcon from '../assets/email.svg';
 import imageIcon from '../assets/image.svg';
 import laykeIcon from '../assets/layke.svg';
 import liuIcon from '../assets/liu.svg';
 import nickamedIcon from '../assets/nicknamed.svg';
+import phoneIcon from '../assets/phone.svg';
 import ssfIcon from '../assets/ssf.svg';
 import sveaIcon from '../assets/svea.svg';
 import wellrIcon from '../assets/wellr.svg';
@@ -42,6 +44,34 @@ export default function IndexPage() {
           <Container line>
             <h1>Hi, I&apos;m Lucas</h1>
             <p>{description}</p>
+            <div
+              css={{
+                a: {
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  margin: '4px 0',
+                },
+                img: {
+                  fontSize: '1.2rem',
+                  width: '1em',
+                  heigth: '1em',
+                  marginRight: 4,
+                },
+              }}
+            >
+              <div>
+                <a href="tel:0046730353177">
+                  <img src={phoneIcon} />
+                  +46 730 353 177
+                </a>
+              </div>
+              <div>
+                <a href="mailto:lucas@lucaswickstrom.com">
+                  <img src={emailIcon} />
+                  lucas@lucaswickstrom.com
+                </a>
+              </div>
+            </div>
           </Container>
 
           <Company line imgProps={{ icon: imageIcon, alt: 'Polytop' }}>
