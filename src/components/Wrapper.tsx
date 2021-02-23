@@ -7,10 +7,11 @@ export const Wrapper = styled.div({
   flexDirection: 'column',
   alignItems: 'center',
   maxWidth: 1030,
-  padding: '48px 16px',
+  padding: '48px 16px 256px',
   margin: '0 auto',
 
   [bigScreen]: {
-    padding: 48,
+    paddingLeft: 48,
+    paddingRight: 48,
   },
 });

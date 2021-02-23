@@ -3,6 +3,7 @@ import { Helmet } from 'react-helmet';
 
 import imageIcon from '../assets/image.svg';
 import laykeIcon from '../assets/layke.svg';
+import liuIcon from '../assets/liu.svg';
 import nickamedIcon from '../assets/nicknamed.svg';
 import ssfIcon from '../assets/ssf.svg';
 import sveaIcon from '../assets/svea.svg';
@@ -43,7 +44,7 @@ export default function IndexPage() {
             <p>{description}</p>
           </Container>
 
-          <Company imgProps={{ icon: imageIcon, alt: 'Polytop' }}>
+          <Company line imgProps={{ icon: imageIcon, alt: 'Polytop' }}>
             <>
               <h2>Polytop</h2>
               <Time start={new Date('2019-12-20')} />
@@ -103,7 +104,7 @@ export default function IndexPage() {
             </Links>
           </Container>
 
-          <Company imgProps={{ icon: nickamedIcon, alt: 'Nicknamed' }}>
+          <Company line imgProps={{ icon: nickamedIcon, alt: 'Nicknamed' }}>
             <>
               <h2>
                 <a href="https://nicknamed.se">Nicknamed</a>
@@ -239,7 +240,10 @@ export default function IndexPage() {
             </Links>
           </Container>
 
-          <Company imgProps={{ icon: ssfIcon, alt: 'Sveriges Schackförbund' }}>
+          <Company
+            line
+            imgProps={{ icon: ssfIcon, alt: 'Sveriges Schackförbund' }}
+          >
             <>
               <h2>
                 <a href="https://schack.se">Swedish Chess Federation</a>
@@ -323,7 +327,7 @@ export default function IndexPage() {
             </Links>
           </Container>
 
-          <Company>
+          <Company line>
             <>
               <h2>Cloudlux</h2>
               <Time
@@ -342,6 +346,19 @@ export default function IndexPage() {
             <Links>
               <Tags tags={['PHP', 'MySQL', 'Wordpress', 'jQuery', 'Polymer']} />
             </Links>
+          </Container>
+
+          <hr />
+
+          <Company imgProps={{ icon: liuIcon, alt: 'Linköping University' }}>
+            <>
+              <h2>Institute of Technology: Linköping University</h2>
+              <span>2011 - 2015</span>
+            </>
+          </Company>
+          <Container>
+            <p>Computer Science</p>
+            <Links>Activities and Societies: D-Group, Flamman</Links>
           </Container>
         </Wrapper>
       </Layout>

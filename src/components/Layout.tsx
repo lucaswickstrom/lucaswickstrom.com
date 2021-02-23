@@ -55,6 +55,7 @@ export const Layout: React.FC = ({ children }) => (
           color: 'inherit',
           position: 'relative',
           display: 'inline-block',
+          outline: 'none',
 
           '&:after': {
             content: "''",
@@ -72,7 +73,7 @@ export const Layout: React.FC = ({ children }) => (
               to: { transform: 'scaleX(0)' },
             })} .3s ease-in-out`,
           },
-          '&:hover:after': {
+          '&:hover:after, &:focus:after': {
             transformOrigin: '0 50%',
             transform: 'scaleX(1)',
             animation: `${keyframes({
@@ -80,6 +81,14 @@ export const Layout: React.FC = ({ children }) => (
               to: { transform: 'scaleX(1)' },
             })} .3s ease-in-out`,
           },
+        },
+
+        hr: {
+          width: '100%',
+          maxWidth: 600,
+          height: 1,
+          margin: '64px auto 32px',
+          backgroundColor: borderColor,
         },
       }}
     />

@@ -1,15 +1,16 @@
 import React from 'react';
 
-import { borderColor } from './Layout';
+import { bgColor, borderColor } from './Layout';
 
 export const Company: React.FC<{
+  line?: boolean;
   imgProps?: { icon: string; alt: string };
-}> = ({ imgProps, children }) => (
+}> = ({ line, imgProps, children }) => (
   <div
     css={{
       width: '100%',
       padding: '48px 16px 0',
-      borderLeft: `1px solid ${borderColor}`,
+      borderLeft: `1px solid ${line ? borderColor : 'transparent'}`,
     }}
   >
     {imgProps ? (
@@ -30,7 +31,7 @@ export const Company: React.FC<{
       <div
         css={{
           display: 'block',
-          backgroundColor: '#FFF',
+          backgroundColor: bgColor,
           width: 92,
           height: 92,
           borderRadius: '50%',
