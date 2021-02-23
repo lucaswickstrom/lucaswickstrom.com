@@ -3,7 +3,7 @@ import React from 'react';
 import Helmet from 'react-helmet';
 
 export const bigScreen = '@media (min-width: 768px)';
-export const bgColor = '#fffbf3';
+export const bgColor = '#f8f8f1'; //'#fffbf3';
 export const borderColor = '#979797';
 const fontColor = '#424242';
 
