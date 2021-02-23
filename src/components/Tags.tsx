@@ -18,7 +18,7 @@ const tagsObject = {
   'Google Search Console': 'https://search.google.com/search-console/about',
   'React.js': 'https://reactjs.org/',
   'D3.js': 'https://d3js.org/',
-  'Gatsby.js': 'https://www.gatsbyjs.org/',
+  GatsbyJS: 'https://www.gatsbyjs.org/',
   'Next.js': 'https://nextjs.org/',
   'Adaptive Streaming': 'https://en.wikipedia.org/wiki/HTTP_Live_Streaming',
   Java: 'https://www.java.com/',
@@ -28,6 +28,17 @@ const tagsObject = {
   Wordpress: 'https://wordpress.org/',
   GraphQL: 'https://graphql.org/',
   Redux: 'https://redux.js.org/',
+  Storybook: 'https://storybook.js.org/',
+  Jest: 'https://jestjs.io/',
+  i18n: 'https://en.wikipedia.org/wiki/Internationalization_and_localization',
+  a11y: 'https://en.wikipedia.org/wiki/Computer_accessibility',
+  Docker: 'https://www.docker.com/',
+  'C#': 'https://docs.microsoft.com/en-us/dotnet/csharp/',
+  Gulp: 'https://gulpjs.com/',
+  Websocket: 'https://sv.wikipedia.org/wiki/Websocket',
+  Mocha: 'https://mochajs.org/',
+  Git: 'https://git-scm.com/',
+  Stripe: 'https://stripe.com/',
 };
 
 export const Tags: React.FC<{ tags: (keyof typeof tagsObject)[] }> = ({

@@ -57,7 +57,11 @@ export default function IndexPage() {
             <Time start={new Date('2020-09-10')} />
           </Job>
           <Container line>
-            <p>Maintaing this health app</p>
+            <p>
+              Wellr is a health solution that measures, evaluates and improves
+              health and the working environment. I&apos;m maintaining their
+              React Native app.
+            </p>
           </Container>
           <Container line>
             <Links>
@@ -67,7 +71,7 @@ export default function IndexPage() {
 
           <Job icon={ssfIcon} line>
             <h3>
-              <a href="https://prod.spela.schack.se">Schackfyran online</a>
+              <a href="https://play.schackfyran.se">Schackfyran online</a>
             </h3>
             <Time
               start={new Date('2020-03-10')}
@@ -76,9 +80,9 @@ export default function IndexPage() {
           </Job>
           <Container line>
             <p>
-              With the isolation due to covid-19 the Swedish Chess Federation
-              ask me to futher develop the Yes2Chess platform to handle more
-              types of tournaments with more players.
+              With the isolation due to covid-19 I further developed their real
+              time chess platform, Yes2Chess, to handle more types of
+              tournaments and more players.
             </p>
           </Container>
           <Container line>
@@ -118,14 +122,28 @@ export default function IndexPage() {
           </Job>
           <Container line>
             <p>
-              Working with 2 projects on Svea WebPay. A back office system for
-              handling payment fraud. And a payment and order management web app
-              for customers.
+              At the online payment platform Svea WebPay, we worked agile, in
+              cross-functional teams and I worked closely with UX, backenders
+              and stakeholders. I was mainly active in two projects. A back
+              office system for handling payment fraud, and a payment and order
+              management web app for customers.
             </p>
           </Container>
           <Container line>
             <Links>
-              <Tags tags={['Typescript', 'Vue.js', 'Vuex', 'Webpack']} />
+              <Tags
+                tags={[
+                  'Typescript',
+                  'Vue.js',
+                  'Vuex',
+                  'Webpack',
+                  'Storybook',
+                  'Jest',
+                  'i18n',
+                  'a11y',
+                  'Google Analytics',
+                ]}
+              />
             </Links>
           </Container>
 
@@ -142,8 +160,14 @@ export default function IndexPage() {
           </Job>
           <Container line>
             <p>
-              Helped Svea with a major design refresh of their marketing site
-              svea.com.
+              Worked as a web developer in a cross-functional team at Svea
+              marketing division. Added tracking for Svea’s services, optimized
+              svea.com for SEO and launched sites for affiliates in other
+              countries. Lead web development in a bigger design refreshment of
+              svea.com due to a brand merge of Svea Ekonomi and Svea Bank. When
+              the assignment ended we had collected 1237 pages under the same
+              domain, conversion had grown by 20% and organic traffic was stable
+              even despite fierce competition.
             </p>
           </Container>
           <Container line>
@@ -151,7 +175,9 @@ export default function IndexPage() {
               <Tags
                 tags={[
                   'Episerver',
+                  'C#',
                   'AngularJS',
+                  'Gulp',
                   'SEO',
                   'Google Tag Manager',
                   'Google Analytics',
@@ -174,13 +200,13 @@ export default function IndexPage() {
           </Job>
           <Container line>
             <p>
-              Dashboard with components for searching and aggregating tabular
-              data combined with dynamic graphs.
+              Developed a dashboard with components for searching and
+              aggregating tabular data combined with dynamic graphs.
             </p>
           </Container>
           <Container line>
             <Links>
-              <Tags tags={['Typescript', 'React.js', 'D3.js']} />
+              <Tags tags={['Typescript', 'React.js', 'D3.js', 'Docker']} />
             </Links>
           </Container>
 
@@ -195,7 +221,7 @@ export default function IndexPage() {
           </Job>
           <Container line>
             <p>
-              Built an animation and video heavy marketing website for a
+              Built an animation and video heavy marketing website for an
               upcoming product.
             </p>
           </Container>
@@ -205,7 +231,7 @@ export default function IndexPage() {
                 tags={[
                   'Typescript',
                   'React.js',
-                  'Gatsby.js',
+                  'GatsbyJS',
                   'SEO',
                   'Adaptive Streaming',
                 ]}
@@ -224,6 +250,13 @@ export default function IndexPage() {
               />
             </>
           </Company>
+          <Container line>
+            <p>
+              At the Swedish Chess Federation I worked as a sole developer.
+              Which meant that I had to work with the whole stack, from UX to
+              devops. I was mainly working with three projects.
+            </p>
+          </Container>
 
           <Job line>
             <h3>
@@ -231,11 +264,25 @@ export default function IndexPage() {
             </h3>
           </Job>
           <Container line>
-            <p>Realtime chess platform for Swedish students.</p>
+            <p>
+              A real time chess platform that I builded from the ground up. It
+              is mainly used for the chess tournament with the same name, where
+              schools from Sweden are competing online. During a year a total of
+              4 000 kids representing 500 teams.
+            </p>
           </Container>
           <Container line>
             <Links>
-              <Tags tags={['Node.js', 'MongoDB', 'Polymer']} />
+              <Tags
+                tags={[
+                  'Node.js',
+                  'MongoDB',
+                  'Polymer',
+                  'Websocket',
+                  'Mocha',
+                  'Git',
+                ]}
+              />
             </Links>
           </Container>
 
@@ -248,13 +295,14 @@ export default function IndexPage() {
           </Job>
           <Container line>
             <p>
-              Further development of existing systems, such as payment solution
-              for tournaments and a new rest api.
+              Administrating 40 000+ members, the backbone of the federation. I
+              maintained and implemented e.g. a statistics module, a payment
+              solution for tournaments via Stripe and a new RESTful API.
             </p>
           </Container>
           <Container line>
             <Links>
-              <Tags tags={['Java', 'MySQL', 'jQuery']} />
+              <Tags tags={['Java', 'MySQL', 'jQuery', 'Stripe']} />
             </Links>
           </Container>
 
@@ -265,8 +313,8 @@ export default function IndexPage() {
           </Job>
           <Container>
             <p>
-              Maintained the Swedish Chess Federation&apos;s website which has
-              over 10,000 daily pageviews
+              I maintained the Swedish Chess Federation&apos;s website which had
+              more than 10 000 daily pageviews.
             </p>
           </Container>
           <Container>
