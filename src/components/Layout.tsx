@@ -19,8 +19,12 @@ export const Layout: React.FC = ({ children }) => {
     <>
       <Helmet>
         <link
+          rel="preload"
           href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600&display=swap"
-          rel="stylesheet"
+          as="style"
+          onLoad={(event) => {
+            event.currentTarget.rel = 'stylesheet';
+          }}
         />
       </Helmet>
       <Global

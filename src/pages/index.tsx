@@ -54,7 +54,7 @@ export default function IndexPage() {
                 img: {
                   fontSize: '1.2rem',
                   width: '1em',
-                  heigth: '1em',
+                  height: '1em',
                   marginRight: 4,
                 },
               }}

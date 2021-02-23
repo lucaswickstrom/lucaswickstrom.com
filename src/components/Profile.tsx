@@ -16,13 +16,13 @@ export const Profile: React.FC = () => (
       css={{
         position: 'relative',
         border,
-        width: size,
-        height: size,
         borderRadius: '50%',
         marginTop: 96,
         marginBottom: -size / 2,
         padding: 2,
       }}
+      width={size}
+      height={size}
     />
     <div
       css={{
@@ -38,14 +38,14 @@ export const Profile: React.FC = () => (
       line
       css={{
         textAlign: 'center',
-        img: { width: 32, heigth: 32, margin: '-24px 8px 0' },
+        img: { margin: '-24px 8px 0' },
       }}
     >
       <a href="https://www.linkedin.com/in/lucaswickstrom/">
-        <img src={linkedinIcon} alt="LinkedIn" />
+        <img src={linkedinIcon} alt="LinkedIn" width={32} height={32} />
       </a>
       <a href="https://github.com/lucaswickstrom">
-        <img src={githubIcon} alt="Github" />
+        <img src={githubIcon} alt="Github" width={32} height={32} />
       </a>
     </Container>
   </>
