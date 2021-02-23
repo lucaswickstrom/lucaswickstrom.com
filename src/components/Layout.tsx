@@ -38,6 +38,10 @@ export const Layout: React.FC = ({ children }) => {
             color: fontColor,
           },
 
+          'body > div': {
+            overflow: 'hidden',
+          },
+
           'h1, h2, h3': {
             margin: '0 0 4px',
             fontWeight: 600,

@@ -1,4 +1,5 @@
 export * from './Ad';
+export * from './Carousel';
 export * from './Company';
 export * from './Container';
 export * from './Job';

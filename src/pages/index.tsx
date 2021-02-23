@@ -7,10 +7,13 @@ import laykeIcon from '../assets/layke.svg';
 import liuIcon from '../assets/liu.svg';
 import nickamedIcon from '../assets/nicknamed.svg';
 import phoneIcon from '../assets/phone.svg';
+import * as schackfyranOnlineImgs from '../assets/schackfyran-online';
 import ssfIcon from '../assets/ssf.svg';
 import sveaIcon from '../assets/svea.svg';
+import * as wellrImgs from '../assets/wellr';
 import wellrIcon from '../assets/wellr.svg';
 import {
+  Carousel,
   Company,
   Container,
   Job,
@@ -95,6 +98,24 @@ export default function IndexPage() {
             </p>
           </Container>
           <Container line>
+            <Carousel naturalSlideWidth={116 + 32} css={{ width: 116 + 32 }}>
+              {Object.values(wellrImgs).map((src, index) => (
+                <img
+                  key={index}
+                  src={src}
+                  alt={`Wellr image ${index + 1}`}
+                  height={252}
+                  width={116}
+                  css={{
+                    height: '100%',
+                    width: 'auto',
+                    boxShadow: '0 2px 4px 0 rgba(0,0,0,0.4)',
+                  }}
+                />
+              ))}
+            </Carousel>
+          </Container>
+          <Container line>
             <Links>
               <Tags tags={['React Native', 'Redux']} />
             </Links>
@@ -115,6 +136,24 @@ export default function IndexPage() {
               Chess Federation&apos;s real time chess platform, Yes2Chess, to
               handle more types of tournaments and more players.
             </p>
+          </Container>
+          <Container line>
+            <Carousel naturalSlideWidth={403 + 32} css={{ width: 403 + 32 }}>
+              {Object.values(schackfyranOnlineImgs).map((src, index) => (
+                <img
+                  key={index}
+                  src={src}
+                  alt={`Schackfyran Online image ${index + 1}`}
+                  height={252}
+                  width={403}
+                  css={{
+                    height: '100%',
+                    width: 'auto',
+                    boxShadow: '0 2px 4px 0 rgba(0,0,0,0.4)',
+                  }}
+                />
+              ))}
+            </Carousel>
           </Container>
           <Container line>
             <Links>
