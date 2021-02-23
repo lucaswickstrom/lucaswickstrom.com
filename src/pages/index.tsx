@@ -8,10 +8,13 @@ import liuIcon from '../assets/liu.svg';
 import nickamedIcon from '../assets/nicknamed.svg';
 import phoneIcon from '../assets/phone.svg';
 import * as schackfyranOnlineImgs from '../assets/schackfyran-online';
+import * as schackseImgs from '../assets/schackse';
 import ssfIcon from '../assets/ssf.svg';
 import sveaIcon from '../assets/svea.svg';
+import * as sveacomImgs from '../assets/sveacom';
 import * as wellrImgs from '../assets/wellr';
 import wellrIcon from '../assets/wellr.svg';
+import * as yes2chessImgs from '../assets/yes2chess';
 import {
   Carousel,
   Company,
@@ -237,10 +240,28 @@ export default function IndexPage() {
               svea.com for SEO and launched sites for affiliates in other
               countries. Lead web development in a bigger design refreshment of
               svea.com due to a brand merge of Svea Ekonomi and Svea Bank. When
-              the assignment ended we had collected 1237 pages under the same
-              domain, conversion had grown by 20% and organic traffic was stable
-              even despite fierce competition.
+              the assignment ended we had collected 1&nbsp;237 pages under the
+              same domain, conversion had grown by 20% and organic traffic was
+              stable even despite fierce competition.
             </p>
+          </Container>
+          <Container line>
+            <Carousel naturalSlideWidth={504 + 32} css={{ width: 504 + 32 }}>
+              {Object.values(sveacomImgs).map((src, index) => (
+                <img
+                  key={index}
+                  src={src}
+                  alt={`Svea.com image ${index + 1}`}
+                  height={252}
+                  width={504}
+                  css={{
+                    height: '100%',
+                    width: 'auto',
+                    boxShadow: '0 2px 4px 0 rgba(0,0,0,0.4)',
+                  }}
+                />
+              ))}
+            </Carousel>
           </Container>
           <Container line>
             <Links>
@@ -343,8 +364,26 @@ export default function IndexPage() {
               A real time chess platform that I builded from the ground up. It
               is mainly used for the chess tournament with the same name, where
               schools from Sweden are competing online. During a year a total of
-              4 000 kids representing 500 teams.
+              4&nbsp;000 kids representing 500 teams.
             </p>
+          </Container>
+          <Container line>
+            <Carousel naturalSlideWidth={403 + 32} css={{ width: 403 + 32 }}>
+              {Object.values(yes2chessImgs).map((src, index) => (
+                <img
+                  key={index}
+                  src={src}
+                  alt={`Yes2Chess image ${index + 1}`}
+                  height={252}
+                  width={403}
+                  css={{
+                    height: '100%',
+                    width: 'auto',
+                    boxShadow: '0 2px 4px 0 rgba(0,0,0,0.4)',
+                  }}
+                />
+              ))}
+            </Carousel>
           </Container>
           <Container line>
             <Links>
@@ -370,9 +409,10 @@ export default function IndexPage() {
           </Job>
           <Container line>
             <p>
-              Administrating 40 000+ members, the backbone of the federation. I
-              maintained and implemented e.g. a statistics module, a payment
-              solution for tournaments via Stripe and a new RESTful API.
+              Administrating 40&nbsp;000+ members, the backbone of the
+              federation. I maintained and implemented e.g. a statistics module,
+              a payment solution for tournaments via Stripe and a new RESTful
+              API.
             </p>
           </Container>
           <Container line>
@@ -389,8 +429,26 @@ export default function IndexPage() {
           <Container line>
             <p>
               I maintained the Swedish Chess Federation&apos;s website which had
-              more than 10 000 daily pageviews.
+              more than 10&nbsp;000 daily pageviews.
             </p>
+          </Container>
+          <Container line>
+            <Carousel naturalSlideWidth={403 + 32} css={{ width: 403 + 32 }}>
+              {Object.values(schackseImgs).map((src, index) => (
+                <img
+                  key={index}
+                  src={src}
+                  alt={`Schack.se image ${index + 1}`}
+                  height={252}
+                  width={403}
+                  css={{
+                    height: '100%',
+                    width: 'auto',
+                    boxShadow: '0 2px 4px 0 rgba(0,0,0,0.4)',
+                  }}
+                />
+              ))}
+            </Carousel>
           </Container>
           <Container line>
             <Links>

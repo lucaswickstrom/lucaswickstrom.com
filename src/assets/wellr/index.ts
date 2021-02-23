@@ -1,7 +1,7 @@
-export { default as wellr1 } from './wellr-1.png';
-export { default as wellr2 } from './wellr-2.png';
-export { default as wellr3 } from './wellr-3.png';
-export { default as wellr4 } from './wellr-4.png';
-export { default as wellr5 } from './wellr-5.png';
-export { default as wellr6 } from './wellr-6.png';
-export { default as wellr7 } from './wellr-7.png';
+export { default as wellr01 } from './wellr-01.png';
+export { default as wellr02 } from './wellr-02.png';
+export { default as wellr03 } from './wellr-03.png';
+export { default as wellr04 } from './wellr-04.png';
+export { default as wellr05 } from './wellr-05.png';
+export { default as wellr06 } from './wellr-06.png';
+export { default as wellr07 } from './wellr-07.png';

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { bigScreen, borderColor } from './Layout';
+import { bgColor, bigScreen, borderColor } from './Layout';
 
 const border = `1px solid ${borderColor}`;
 
@@ -51,6 +51,7 @@ export const Job: React.FC<JobProps> = ({
         alt={imgProps.alt}
         css={{
           display: 'block',
+          backgroundColor: bgColor,
           width: 64,
           height: 64,
           borderRadius: '50%',
@@ -58,6 +59,8 @@ export const Job: React.FC<JobProps> = ({
             marginLeft: 32,
           },
           marginBottom: -64,
+          padding: 2,
+          border: `1px solid ${borderColor}`,
         }}
       />
     ) : (

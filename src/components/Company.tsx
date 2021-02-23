@@ -19,12 +19,14 @@ export const Company: React.FC<{
         alt={imgProps.alt}
         css={{
           display: 'block',
-          backgroundColor: '#FFF',
+          backgroundColor: bgColor,
           width: 92,
           height: 92,
           borderRadius: '50%',
           marginLeft: -16 - 92 / 2,
           marginBottom: -96,
+          padding: 2,
+          border: `1px solid ${borderColor}`,
         }}
       />
     ) : (
