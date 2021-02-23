@@ -111,9 +111,9 @@ export default function IndexPage() {
           </Job>
           <Container line>
             <p>
-              With the isolation due to covid-19 I further developed their real
-              time chess platform, Yes2Chess, to handle more types of
-              tournaments and more players.
+              With the isolation due to covid-19 I further developed the Swedish
+              Chess Federation&apos;s real time chess platform, Yes2Chess, to
+              handle more types of tournaments and more players.
             </p>
           </Container>
           <Container line>
@@ -146,7 +146,9 @@ export default function IndexPage() {
           <Job imgProps={{ icon: sveaIcon, alt: 'Svea Ekonomi' }} line>
             <>
               <h3>
-                <a href="https://www.svea.com">Svea Ekonomi</a>
+                <a href="https://www.svea.com/se/sv/foretag/betallosningar/betallosningar-for-e-handel/for-dig-som-handlat/">
+                  Svea Ekonomi
+                </a>
               </h3>
               <Time start={new Date('2019-10-25')} />
             </>
