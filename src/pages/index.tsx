@@ -61,13 +61,13 @@ export default function IndexPage() {
             >
               <div>
                 <a href="tel:0046730353177">
-                  <img src={phoneIcon} />
+                  <img src={phoneIcon} alt="phone" />
                   +46 730 353 177
                 </a>
               </div>
               <div>
                 <a href="mailto:lucas@lucaswickstrom.com">
-                  <img src={emailIcon} />
+                  <img src={emailIcon} alt="email" />
                   lucas@lucaswickstrom.com
                 </a>
               </div>

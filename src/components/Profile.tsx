@@ -42,10 +42,10 @@ export const Profile: React.FC = () => (
       }}
     >
       <a href="https://www.linkedin.com/in/lucaswickstrom/">
-        <img src={linkedinIcon} />
+        <img src={linkedinIcon} alt="LinkedIn" />
       </a>
       <a href="https://github.com/lucaswickstrom">
-        <img src={githubIcon} />
+        <img src={githubIcon} alt="Github" />
       </a>
     </Container>
   </>
