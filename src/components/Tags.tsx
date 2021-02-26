@@ -31,7 +31,7 @@ const tagsObject = {
   Storybook: 'https://storybook.js.org/',
   Jest: 'https://jestjs.io/',
   i18n: 'https://en.wikipedia.org/wiki/Internationalization_and_localization',
-  a11y: 'https://en.wikipedia.org/wiki/Computer_accessibility',
+  A11y: 'https://en.wikipedia.org/wiki/Computer_accessibility',
   Docker: 'https://www.docker.com/',
   'C#': 'https://docs.microsoft.com/en-us/dotnet/csharp/',
   Gulp: 'https://gulpjs.com/',
@@ -39,7 +39,11 @@ const tagsObject = {
   Mocha: 'https://mochajs.org/',
   Git: 'https://git-scm.com/',
   Stripe: 'https://stripe.com/',
+  Sentry: 'https://sentry.io/',
+  'OpenID Connect': 'https://openid.net/connect/',
 };
+
+export type Tag = keyof typeof tagsObject;
 
 export const Tags: React.FC<{ tags: (keyof typeof tagsObject)[] }> = ({
   tags,

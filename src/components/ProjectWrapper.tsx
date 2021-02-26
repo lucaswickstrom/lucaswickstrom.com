@@ -4,19 +4,10 @@ import { bgColor, bigScreen, borderColor } from './Layout';
 
 const border = `1px solid ${borderColor}`;
 
-type JobProps = {
+export const ProjectWrapper: React.FC<{
   line?: boolean;
-  imgProps?: {
-    icon: string;
-    alt: string;
-  };
-};
-
-export const Job: React.FC<JobProps> = ({
-  line = false,
-  imgProps,
-  children,
-}) => (
+  imgProps?: { src: string; alt: string };
+}> = ({ line = false, imgProps, children }) => (
   <div
     css={[
       {
@@ -47,8 +38,7 @@ export const Job: React.FC<JobProps> = ({
   >
     {imgProps ? (
       <img
-        src={imgProps.icon}
-        alt={imgProps.alt}
+        {...imgProps}
         css={{
           display: 'block',
           backgroundColor: bgColor,

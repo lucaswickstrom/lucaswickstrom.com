@@ -2,9 +2,11 @@ import React from 'react';
 
 import { bgColor, borderColor } from './Layout';
 
-export const Company: React.FC<{
+const border = `1px solid ${borderColor}`;
+
+export const ExperienceWrapper: React.FC<{
   line?: boolean;
-  imgProps?: { icon: string; alt: string };
+  imgProps?: { src: string; alt: string };
 }> = ({ line, imgProps, children }) => (
   <div
     css={{
@@ -15,8 +17,7 @@ export const Company: React.FC<{
   >
     {imgProps ? (
       <img
-        src={imgProps.icon}
-        alt={imgProps.alt}
+        {...imgProps}
         css={{
           display: 'block',
           backgroundColor: bgColor,
@@ -26,7 +27,7 @@ export const Company: React.FC<{
           marginLeft: -16 - 92 / 2,
           marginBottom: -96,
           padding: 2,
-          border: `1px solid ${borderColor}`,
+          border,
         }}
       />
     ) : (
@@ -39,7 +40,7 @@ export const Company: React.FC<{
           borderRadius: '50%',
           marginLeft: -16 - 92 / 2,
           marginBottom: -96,
-          border: `1px solid ${borderColor}`,
+          border,
         }}
       />
     )}

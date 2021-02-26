@@ -35,21 +35,33 @@ const getMonthAndYearDiff = (date1: Date, date2: Date) => {
   );
 };
 
-export const Time: React.FC<{ start: Date; stop?: Date }> = ({
-  start,
-  stop = new Date(),
-}) => {
+export const Time: React.FC<{
+  start: string;
+  end?: string;
+  format?: 'year' | 'month';
+  hideLength?: boolean;
+}> = ({ start, end, format = 'month', hideLength }) => {
+  const startDate = new Date(start);
+  const endDate = new Date(end || Date.now());
   return (
     <span>
-      {getMonthAndYear(start)}
-      {isSameMonthAndYear(start, stop)
-        ? ''
-        : ` - ${
-            stop.getTime() > Date.now() - day
-              ? 'Present'
-              : getMonthAndYear(stop)
-          }`}{' '}
-      • {getMonthAndYearDiff(start, stop)}
+      {format === 'year' ? (
+        `${startDate.getFullYear()} - ${
+          endDate ? endDate.getFullYear() : 'Present'
+        }`
+      ) : (
+        <>
+          {getMonthAndYear(startDate)}
+          {isSameMonthAndYear(startDate, endDate)
+            ? ''
+            : ` - ${
+                endDate.getTime() > Date.now() - day
+                  ? 'Present'
+                  : getMonthAndYear(endDate)
+              }`}
+          {hideLength ? '' : ` • ${getMonthAndYearDiff(startDate, endDate)}`}
+        </>
+      )}
     </span>
   );
 };
