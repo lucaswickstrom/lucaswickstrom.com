@@ -16,7 +16,7 @@ const CVPrint = () => (
       <title>{cv.name} - CV</title>
     </Helmet>
     <Layout>
-      <div css={{ maxWidth: '180mm', margin: '6mm auto 0' }}>
+      <div css={{ maxWidth: '180mm', margin: '2mm auto 0' }}>
         <h1>{cv.name}</h1>
         <ul
           css={{
@@ -155,13 +155,14 @@ const CVPrint = () => (
         },
         'h3 + span': {
           fontWeight: 400,
-          fontSize: '0.8rem',
+          fontSize: '0.9rem',
         },
         h5: {
-          marginBottom: '3mm',
+          fontSize: 'inherit',
+          marginBottom: '1mm',
         },
         'h5 + p': {
-          marginTop: '3mm',
+          marginTop: '0',
         },
         p: {
           fontSize: '1rem',

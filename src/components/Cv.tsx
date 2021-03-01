@@ -60,11 +60,12 @@ const experiences: Experience[] = [
         time: { start: '2020-09-10' },
         content: (
           <p>
-            Wellr is a health solution that measures, evaluates and improves
-            health and the working environment. In their React Native app they
-            have a concept with challenges between accounts, so to keep the data
-            fresh I have implemented background sync of fitness data. I also
-            added Sentry to record app crashes and log exceptions.
+            Wellr is a health concept measuring, evaluating and improving health
+            and working environment. Central is the React Native app where the
+            employee can track their challenges and compete with coworkers. My
+            contribution has been an implementation of background
+            synchronization to keep fitness data fresh. I also added Sentry to
+            record app crashes and log exceptions.
           </p>
         ),
         images: Object.values(wellrImgs).map((src, index) => ({
@@ -128,16 +129,16 @@ const experiences: Experience[] = [
         time: { start: '2019-10-25' },
         content: (
           <p>
-            Worked with two projects at the online payment platform Svea WebPay.
-            A back office system for handling payment fraud and a web app for
-            payment and order management for customers. We worked agile in a
+            I worked with two projects at the online payment platform Svea
+            WebPay. A back office system for handling payment fraud and a web
+            app for payment and order management. We worked agile in a
             cross-functional team and I worked closely with UX, QA, backenders
             and stakeholders. I was responsible for everything frontend, from
             applying new translations to implementing design systems. Multiple
-            business areas were coordinated through to one authentication
-            service, I was responsible for handling our connection. During the
-            projects I added Typescript, integrated accessibility checks with
-            Storybook to our process and implemented tracking.
+            business areas were coordinated to one authentication service. I was
+            responsible for handling our connection. During the projects I added
+            Typescript, integrated accessibility checks with Storybook to our
+            process and implemented tracking.
           </p>
         ),
         tags: [
@@ -162,14 +163,14 @@ const experiences: Experience[] = [
         time: { start: '2019-03-16', end: '2019-08-31' },
         content: (
           <p>
-            Worked as a web developer in a cross-functional team at Svea
-            marketing division. Added tracking for Svea’s services, optimized
-            svea.com for SEO and launched sites for affiliates in other
-            countries. Lead web development in a bigger design refreshment of
-            svea.com due to a brand merge of Svea Ekonomi and Svea Bank. When
-            the assignment ended we had collected 1&nbsp;237 pages under the
-            same domain, conversion had grown by 20% and organic traffic was
-            stable even despite fierce competition.
+            I worked as a web developer in a cross-functional team at Svea
+            marketing division. I also added tracking for Svea’s services,
+            optimized svea.com for SEO and launched sites for affiliates in
+            other countries. In addition I lead web development in a bigger
+            design refreshment of svea.com due to a brand merge of Svea Ekonomi
+            and Svea Bank. When the assignment ended we had collected 1&nbsp;237
+            pages under the same domain, conversion had grown by 20% and organic
+            traffic was stable even despite fierce competition.
           </p>
         ),
         images: Object.values(sveacomImgs).map((src, index) => ({
@@ -196,8 +197,8 @@ const experiences: Experience[] = [
         time: { start: '2018-11-05', end: '2019-03-15' },
         content: (
           <p>
-            Developed a dashboard with components for searching and aggregating
-            tabular data combined with dynamic graphs.
+            I developed a dashboard with components for searching and
+            aggregating tabular data combined with dynamic graphs.
           </p>
         ),
         tags: ['Typescript', 'React.js', 'D3.js', 'Docker'],
@@ -210,8 +211,8 @@ const experiences: Experience[] = [
         time: { start: '2018-06-01', end: '2018-11-04' },
         content: (
           <p>
-            Built an animation and video heavy marketing website for an upcoming
-            product.
+            I built an animation and video heavy marketing website for an
+            upcoming product.
           </p>
         ),
         tags: [
@@ -233,8 +234,8 @@ const experiences: Experience[] = [
     content: (
       <p>
         At the Swedish Chess Federation I worked as a sole developer. Which
-        meant that I had to work with the whole stack, from UX to devops. I was
-        mainly working with three projects.
+        meant that I was responsible for the whole stack, from UX to devops. I
+        was mainly working with three projects:
       </p>
     ),
     projects: [
@@ -247,8 +248,8 @@ const experiences: Experience[] = [
             mainly used for the chess tournament with the same name, where
             schools from Sweden are competing online. Difficulties consisted of
             having an easy-to-use design for unfamiliar chess players and
-            getting around the schools firewalls. During a single year a total
-            of 4&nbsp;000 kids played 20&nbsp;000 games of chess.
+            getting around schools firewalls. During a single year a total of
+            4&nbsp;000 kids played more than 20&nbsp;000 games of chess.
           </p>
         ),
         images: Object.values(yes2chessImgs).map((src, index) => ({
