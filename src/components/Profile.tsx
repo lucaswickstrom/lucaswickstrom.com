@@ -1,3 +1,4 @@
+import { OutboundLink } from 'gatsby-plugin-google-gtag';
 import React from 'react';
 
 import githubIcon from '../assets/github.svg';
@@ -41,12 +42,12 @@ export const Profile: React.FC = () => (
         img: { margin: '-24px 8px 0' },
       }}
     >
-      <a href="https://www.linkedin.com/in/lucaswickstrom/">
+      <OutboundLink href="https://www.linkedin.com/in/lucaswickstrom/">
         <img src={linkedinIcon} alt="LinkedIn" width={32} height={32} />
-      </a>
-      <a href="https://github.com/lucaswickstrom">
+      </OutboundLink>
+      <OutboundLink href="https://github.com/lucaswickstrom">
         <img src={githubIcon} alt="Github" width={32} height={32} />
-      </a>
+      </OutboundLink>
     </Container>
   </>
 );

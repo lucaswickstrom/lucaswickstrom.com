@@ -1,4 +1,5 @@
 import { Global } from '@emotion/react';
+import { OutboundLink } from 'gatsby-plugin-google-gtag';
 import React from 'react';
 import { Helmet } from 'react-helmet';
 
@@ -31,19 +32,19 @@ const CVPrint = () => (
           }}
         >
           <li>
-            <a href={`tel:${cv.phone}`}>
+            <OutboundLink href={`tel:${cv.phone}`}>
               <img src={phoneIcon} /> {cv.phone}
-            </a>
+            </OutboundLink>
           </li>
           <li>
-            <a href={`mailto:${cv.email}`}>
+            <OutboundLink href={`mailto:${cv.email}`}>
               <img src={emailIcon} /> {cv.email}
-            </a>
+            </OutboundLink>
           </li>
           <li>
-            <a href={`https://${cv.website}`}>
+            <OutboundLink href={`https://${cv.website}`}>
               <img src={webIcon} /> {cv.website}
-            </a>
+            </OutboundLink>
           </li>
         </ul>
 

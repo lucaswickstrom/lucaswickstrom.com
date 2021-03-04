@@ -1,3 +1,4 @@
+import { OutboundLink } from 'gatsby-plugin-google-gtag';
 import React from 'react';
 import { Helmet } from 'react-helmet';
 
@@ -59,9 +60,9 @@ export default function IndexPage() {
             }}
           >
             {cv.links.map(({ link, icon }) => (
-              <a key={link} href={link}>
+              <OutboundLink key={link} href={link}>
                 <img {...icon} width={32} height={32} />
-              </a>
+              </OutboundLink>
             ))}
           </Container>
 
@@ -84,16 +85,16 @@ export default function IndexPage() {
               }}
             >
               <div>
-                <a href={`tel:${cv.phone}`}>
+                <OutboundLink href={`tel:${cv.phone}`}>
                   <img src={phoneIcon} alt="phone" />
                   {cv.phone}
-                </a>
+                </OutboundLink>
               </div>
               <div>
-                <a href={`mailto:${cv.phone}`}>
+                <OutboundLink href={`mailto:${cv.email}`}>
                   <img src={emailIcon} alt="email" />
                   {cv.email}
-                </a>
+                </OutboundLink>
               </div>
             </div>
           </Container>

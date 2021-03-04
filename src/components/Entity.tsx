@@ -1,3 +1,4 @@
+import { OutboundLink } from 'gatsby-plugin-google-gtag';
 import React from 'react';
 
 import {
@@ -67,7 +68,7 @@ export const Entity: React.FC<
       >
         <ConditionalWrap
           condition={!!link}
-          wrap={(child) => <a href={link}>{child}</a>}
+          wrap={(child) => <OutboundLink href={link}>{child}</OutboundLink>}
         >
           {(company ? `${company} - ` : '') + title}
         </ConditionalWrap>

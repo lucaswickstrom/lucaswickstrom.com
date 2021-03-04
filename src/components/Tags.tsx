@@ -1,3 +1,4 @@
+import { OutboundLink } from 'gatsby-plugin-google-gtag';
 import React from 'react';
 
 const tagsObject = {
@@ -52,7 +53,7 @@ export const Tags: React.FC<{ tags: (keyof typeof tagsObject)[] }> = ({
     {tags.map((key, index) => (
       <React.Fragment key={key}>
         {index ? ', ' : ''}
-        <a href={tagsObject[key]}>{key}</a>
+        <OutboundLink href={tagsObject[key]}>{key}</OutboundLink>
       </React.Fragment>
     ))}
   </>
