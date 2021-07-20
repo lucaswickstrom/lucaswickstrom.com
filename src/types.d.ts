@@ -4,11 +4,12 @@ declare module '*.svg' {
 }
 
 declare module '*.png' {
-  const srcOrHref: string;
-  export default srcOrHref;
+  import { ImageObject } from 'sharp-loader/src/types';
+  const imageObject: ImageObject[];
+  export default imageObject;
 }
 
 declare module '*.jpg' {
-  const srcOrHref: string;
-  export default srcOrHref;
+  const imageObject: ImageObject[];
+  export default imageObject;
 }

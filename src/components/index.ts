@@ -7,6 +7,7 @@ export * from './Experiences';
 export * from './ExperienceWrapper';
 export * from './Layout';
 export * from './Links';
+export * from './Picture';
 export * from './Profile';
 export * from './ProjectWrapper';
 export * from './Tags';

@@ -6,16 +6,21 @@ import laykeIcon from '../assets/layke.svg';
 import linkedinIcon from '../assets/linkedin.svg';
 import liuIcon from '../assets/liu.svg';
 import nickamedIcon from '../assets/nicknamed.svg';
-import profilePhoto from '../assets/profile.jpg';
-import * as schackfyranOnlineImgs from '../assets/schackfyran-online';
-import * as schackseImgs from '../assets/schackse';
+// @ts-ignore
+import profilePhoto from '../assets/profile.jpg?outputs[]=profile';
+// import * as schackfyranOnlineImgs from '../assets/schackfyran-online';
+// import * as schackseImgs from '../assets/schackse';
 import ssfIcon from '../assets/ssf.svg';
 import sveaIcon from '../assets/svea.svg';
-import * as sveacomImgs from '../assets/sveacom';
-import * as wellrImgs from '../assets/wellr';
+// import * as sveacomImgs from '../assets/sveacom';
+// import * as wellrImgs from '../assets/wellr';
 import wellrIcon from '../assets/wellr.svg';
-import * as yes2chessImgs from '../assets/yes2chess';
-import { EntityProps } from '.';
+// import * as yes2chessImgs from '../assets/yes2chess';
+import { EntityProps, Picture } from '.';
+
+function getPictureFromContext(context: ReturnType<typeof require.context>) {
+  return context.keys().map((key) => context<Picture>(key));
+}
 
 type Project = EntityProps;
 export type Experience = EntityProps & { projects: Project[] };
@@ -68,11 +73,9 @@ const experiences: Experience[] = [
             record app crashes and log exceptions.
           </p>
         ),
-        images: Object.values(wellrImgs).map((src, index) => ({
-          alt: `Wellr image ${index + 1}`,
-          src,
-        })),
-        imagesSize: { width: 116, height: 252 },
+        images: getPictureFromContext(
+          require.context('../assets/wellr?outputs[]=carousel', true, /\.png$/),
+        ),
         tags: ['React Native', 'Redux', 'Sentry'],
       },
 
@@ -96,11 +99,13 @@ const experiences: Experience[] = [
             every year.
           </p>
         ),
-        images: Object.values(schackfyranOnlineImgs).map((src, index) => ({
-          alt: `Schackfyran Online image ${index + 1}`,
-          src,
-        })),
-        imagesSize: { width: 403, height: 252 },
+        images: getPictureFromContext(
+          require.context(
+            '../assets/schackfyran-online?outputs[]=carousel',
+            true,
+            /.png$/,
+          ),
+        ),
         tags: [
           'Typescript',
           'Node.js',
@@ -123,8 +128,7 @@ const experiences: Experience[] = [
       {
         company: 'Svea Ekonomi',
         title: 'Web Developer',
-        link:
-          'https://www.svea.com/se/sv/foretag/betallosningar/betallosningar-for-e-handel/for-dig-som-handlat/',
+        link: 'https://www.svea.com/se/sv/foretag/betallosningar/betallosningar-for-e-handel/for-dig-som-handlat/',
         icon: { src: sveaIcon, alt: 'Svea Ekonomi' },
         time: { start: '2019-10-25' },
         content: (
@@ -173,11 +177,13 @@ const experiences: Experience[] = [
             traffic was stable even despite fierce competition.
           </p>
         ),
-        images: Object.values(sveacomImgs).map((src, index) => ({
-          alt: `Svea.com image image ${index + 1}`,
-          src,
-        })),
-        imagesSize: { width: 504, height: 252 },
+        images: getPictureFromContext(
+          require.context(
+            '../assets/sveacom?outputs[]=carousel',
+            true,
+            /\.png$/,
+          ),
+        ),
         tags: [
           'Episerver',
           'C#',
@@ -252,11 +258,13 @@ const experiences: Experience[] = [
             4&nbsp;000 kids played more than 20&nbsp;000 games of chess.
           </p>
         ),
-        images: Object.values(yes2chessImgs).map((src, index) => ({
-          alt: `Yes2Chess image ${index + 1}`,
-          src,
-        })),
-        imagesSize: { width: 403, height: 252 },
+        images: getPictureFromContext(
+          require.context(
+            '../assets/yes2chess?outputs[]=carousel',
+            true,
+            /\.png$/,
+          ),
+        ),
         tags: ['Node.js', 'MongoDB', 'Polymer', 'Websocket', 'Mocha', 'Git'],
       },
 
@@ -282,11 +290,13 @@ const experiences: Experience[] = [
             more than 10&nbsp;000 daily pageviews.
           </p>
         ),
-        images: Object.values(schackseImgs).map((src, index) => ({
-          alt: `Scahck.se image ${index + 1}`,
-          src,
-        })),
-        imagesSize: { width: 403, height: 252 },
+        images: getPictureFromContext(
+          require.context(
+            '../assets/schackse?outputs[]=carousel',
+            true,
+            /\.png$/,
+          ),
+        ),
         tags: ['PHP', 'MySQL', 'Wordpress', 'jQuery'],
       },
     ],

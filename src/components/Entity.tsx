@@ -6,6 +6,7 @@ import {
   Container,
   ExperienceWrapper,
   Links,
+  Picture,
   ProjectWrapper,
   Tag,
   Tags,
@@ -21,8 +22,7 @@ export type EntityProps = {
   icon?: Image;
   time?: { start: string; end?: string; format?: 'year' | 'month' };
   content?: React.ReactNode;
-  images?: Image[];
-  imagesSize?: { width: number; height: number };
+  images?: Picture[];
   tags?: Tag[];
   keywords?: string;
 };
@@ -54,7 +54,6 @@ export const Entity: React.FC<
   time,
   content,
   images,
-  imagesSize,
   tags,
   keywords,
   children,
@@ -77,24 +76,24 @@ export const Entity: React.FC<
       {time && <Time {...time} />}
     </EntityComponent>
     {content && <Container line={!lastItem && !noLine}>{content}</Container>}
-    {images && imagesSize && (
+    {images && (
       <Container line={!lastItem && !noLine}>
         <Carousel
-          naturalSlideWidth={imagesSize.width + 32}
-          css={{ width: imagesSize.width + 32 }}
+          naturalSlideWidth={images[0][0].width / 2 + 32}
+          css={{ width: images[0][0].width / 2 + 32 }}
         >
-          {Object.values(images).map((props, index) => (
-            <img
-              key={index}
-              {...props}
-              height={imagesSize.height}
-              width={imagesSize.width}
+          {images.map((picture, index) => (
+            <Picture
+              key={picture[0].url}
+              title={`${company} ${String(index + 1).padStart(2, '0')}`}
+              picture={picture}
+              height={images[0][0].height / 2}
+              width={images[0][0].width / 2}
               css={{
                 height: '100%',
                 width: 'auto',
                 boxShadow: '0 2px 4px 0 rgba(0,0,0,0.4)',
               }}
-              loading="lazy"
             />
           ))}
         </Carousel>

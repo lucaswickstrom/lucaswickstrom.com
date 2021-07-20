@@ -10,6 +10,7 @@ import {
   cv,
   Experiences,
   Layout,
+  Picture,
   Wrapper,
 } from '../components';
 
@@ -27,14 +28,15 @@ const IndexPage = () => (
     </Helmet>
     <Layout>
       <Wrapper>
-        <img
-          src={cv.photo}
+        <Picture
+          picture={cv.photo}
           alt="Lucas Wickström"
+          eager
           css={{
             position: 'relative',
             border,
             borderRadius: '50%',
-            marginTop: 96,
+            marginTop: photoSize / 2,
             marginBottom: -photoSize / 2,
             padding: 2,
           }}

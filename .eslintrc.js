@@ -37,6 +37,12 @@ module.exports = {
     'simple-import-sort/imports': 'error',
     'simple-import-sort/exports': 'error',
     'no-undef': 'off',
+    'import/no-unresolved': [
+      'error',
+      {
+        ignore: ['.png\\?*', '.jpg\\?*'],
+      },
+    ],
   },
   overrides: [
     {
