@@ -42,6 +42,8 @@ const tagsObject = {
   Stripe: 'https://stripe.com/',
   Sentry: 'https://sentry.io/',
   'OpenID Connect': 'https://openid.net/connect/',
+  Microservices: 'https://microservices.io/',
+  RabbitMQ: 'https://www.rabbitmq.com/',
 };
 
 export type Tag = keyof typeof tagsObject;

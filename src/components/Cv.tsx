@@ -8,14 +8,10 @@ import liuIcon from '../assets/liu.svg';
 import nickamedIcon from '../assets/nicknamed.svg';
 // @ts-ignore
 import profilePhoto from '../assets/profile.jpg?outputs[]=profile';
-// import * as schackfyranOnlineImgs from '../assets/schackfyran-online';
-// import * as schackseImgs from '../assets/schackse';
 import ssfIcon from '../assets/ssf.svg';
 import sveaIcon from '../assets/svea.svg';
-// import * as sveacomImgs from '../assets/sveacom';
-// import * as wellrImgs from '../assets/wellr';
+import travsportIcon from '../assets/travsport.svg';
 import wellrIcon from '../assets/wellr.svg';
-// import * as yes2chessImgs from '../assets/yes2chess';
 import { EntityProps, Picture } from '.';
 
 function getPictureFromContext(context: ReturnType<typeof require.context>) {
@@ -58,11 +54,20 @@ const experiences: Experience[] = [
     time: { start: '2018-12-20' },
     projects: [
       {
+        company: 'Svensk Travsport',
+        title: 'Node Developer',
+        link: 'https://travsport.se/',
+        icon: { src: travsportIcon, alt: 'Svensk Travsport' },
+        time: { start: '2021-05-01' },
+        tags: ['Node.js', 'Microservices', 'Typescript', 'Jest', 'RabbitMQ'],
+      },
+
+      {
         company: 'Wellr',
         title: 'React Native Developer',
         link: 'https://wellr.se/',
         icon: { src: wellrIcon, alt: 'Wellr' },
-        time: { start: '2020-09-10' },
+        time: { start: '2020-09-10', end: '2021-02-28' },
         content: (
           <p>
             Wellr is a health concept measuring, evaluating and improving health
@@ -123,14 +128,14 @@ const experiences: Experience[] = [
   {
     title: 'Nicknamed',
     icon: { src: nickamedIcon, alt: 'Nicknamed' },
-    time: { start: '2018-06-01' },
+    time: { start: '2018-06-01', end: '2021-03-31' },
     projects: [
       {
         company: 'Svea Ekonomi',
         title: 'Web Developer',
         link: 'https://www.svea.com/se/sv/foretag/betallosningar/betallosningar-for-e-handel/for-dig-som-handlat/',
         icon: { src: sveaIcon, alt: 'Svea Ekonomi' },
-        time: { start: '2019-10-25' },
+        time: { start: '2019-10-25', end: '2021-03-31' },
         content: (
           <p>
             I worked with two projects at the online payment platform Svea
