@@ -9,9 +9,13 @@ const fontColor = '#424242';
 export const Layout: React.FC = ({ children }) => {
   const [hasLoaded, setLoaded] = useState(false);
   useEffect(() => {
-    window.addEventListener('load', () => {
+    if (document.readyState == 'complete') {
       setLoaded(true);
-    });
+    } else {
+      window.addEventListener('load', () => {
+        setLoaded(true);
+      });
+    }
   }, []);
 
   return (
