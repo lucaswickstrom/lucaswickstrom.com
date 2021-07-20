@@ -79,8 +79,9 @@ export const Entity: React.FC<
     {images && (
       <Container line={!lastItem && !noLine}>
         <Carousel
-          naturalSlideWidth={images[0][0].width / 2 + 32}
-          css={{ width: images[0][0].width / 2 + 32 }}
+          naturalSlideWidth={images[0][0].width + 32}
+          naturalSlideHeight={images[0][0].height}
+          totalSlides={images.length}
         >
           {images.map((picture, index) => (
             <Picture
@@ -90,9 +91,12 @@ export const Entity: React.FC<
               height={images[0][0].height / 2}
               width={images[0][0].width / 2}
               css={{
-                height: '100%',
                 width: 'auto',
+                height: 'auto',
+                maxWidth: 'calc(100vw - 50px)',
+                maxHeight: '100%',
                 boxShadow: '0 2px 4px 0 rgba(0,0,0,0.4)',
+                objectFit: 'contain',
               }}
             />
           ))}

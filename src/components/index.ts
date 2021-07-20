@@ -1,5 +1,6 @@
 export * from './Ad';
 export * from './Carousel';
+export * from './CarouselDialog';
 export * from './Container';
 export * from './Cv';
 export * from './Entity';
