@@ -127,6 +127,7 @@ const experiences: Experience[] = [
 
   {
     title: 'Nicknamed',
+    link: 'https://nicknamed.se/',
     icon: { src: nickamedIcon, alt: 'Nicknamed' },
     time: { start: '2018-06-01', end: '2021-03-31' },
     projects: [
@@ -238,8 +239,9 @@ const experiences: Experience[] = [
   },
 
   {
-    company: 'Swedish Chess Federation',
+    company: 'Sveriges Schackförbund',
     title: 'Web Developer',
+    link: 'https://schack.se/',
     icon: { src: ssfIcon, alt: 'Sveriges Schackförbund' },
     time: { start: '2015-05-25', end: '2018-05-31' },
     content: (
