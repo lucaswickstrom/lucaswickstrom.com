@@ -63,9 +63,9 @@ const experiences: Experience[] = [
           <p>
             When the Swedish gaming monopoly was removed in 2019, Svensk
             Travsport had to take over services from the betting company ATG and
-            adapt them to its own tech stack. In my team we are modernizing the
-            flow of updating screens on the horse tracks with results and odds
-            data. Challenges have consisted of having many dependencies and
+            adapt them to their own tech stack. In my team we are modernizing
+            the flow of updating screens on the horse tracks with results and
+            odds data. Challenges have consisted of having many dependencies and
             adapting to them, as well as working with old file formats.
           </p>
         ),
