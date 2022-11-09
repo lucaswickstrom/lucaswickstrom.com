@@ -44,6 +44,12 @@ const tagsObject = {
   'OpenID Connect': 'https://openid.net/connect/',
   Microservices: 'https://microservices.io/',
   RabbitMQ: 'https://www.rabbitmq.com/',
+  MUI: 'https://mui.com/',
+  'Cloudflare Workers': 'https://workers.cloudflare.com/',
+  PostgreSQL: 'https://www.postgresql.org/',
+  Supabase: 'https://supabase.com/',
+  Swish: 'https://www.swish.nu/',
+  'Bluetooth Low Energy': 'https://en.wikipedia.org/wiki/Bluetooth_Low_Energy',
 };
 
 export type Tag = keyof typeof tagsObject;

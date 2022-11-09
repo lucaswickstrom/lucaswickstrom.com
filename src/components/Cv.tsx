@@ -3,6 +3,7 @@ import React from 'react';
 import githubIcon from '../assets/github.svg';
 import polytopIcon from '../assets/image.svg';
 import laykeIcon from '../assets/layke.svg';
+import laykeAnalyticsIcon from '../assets/layke-analytics.svg';
 import linkedinIcon from '../assets/linkedin.svg';
 import liuIcon from '../assets/liu.svg';
 import nickamedIcon from '../assets/nicknamed.svg';
@@ -10,6 +11,7 @@ import nickamedIcon from '../assets/nicknamed.svg';
 import profilePhoto from '../assets/profile.jpg?outputs[]=profile';
 import ssfIcon from '../assets/ssf.svg';
 import sveaIcon from '../assets/svea.svg';
+import tobeyIcon from '../assets/tobey.svg';
 import travsportIcon from '../assets/travsport.svg';
 import wellrIcon from '../assets/wellr.svg';
 import { EntityProps, Picture } from '.';
@@ -54,11 +56,90 @@ const experiences: Experience[] = [
     time: { start: '2018-12-20' },
     projects: [
       {
+        company: 'Tobey Rentech',
+        title: 'Founder and developer',
+        link: 'https://tobey.io/',
+        icon: { src: tobeyIcon, alt: 'Tobey Rentech' },
+        time: { start: '2022-07-01' },
+        content: (
+          <p>
+            Tobey is a Swedish start-up company that operates within the tool
+            and equipment rental industry. By using smart parcel boxes, smaller
+            machines becomes more accessible for the craftsman. I am one of the
+            founders.
+          </p>
+        ),
+        tags: [
+          'Typescript',
+          'React Native',
+          'Cloudflare Workers',
+          'PostgreSQL',
+          'Supabase',
+          'Swish',
+          'Bluetooth Low Energy',
+        ],
+      },
+
+      {
+        company: 'Sveriges Schackförbund',
+        title: 'Full-Stack Web Developer',
+        link: 'https://klubb.schack.se',
+        icon: { src: ssfIcon, alt: 'Sveriges Schackförbund' },
+        time: { start: '2022-01-01', end: '2022-06-30' },
+        content: (
+          <p>
+            The Swedish Chess Federation have for years collected chessclubs
+            protocol and signatures by mail and scanned email. I helped them
+            with a fully digital solution with onscreen drawing box and onetime
+            links.
+          </p>
+        ),
+        images: getPictureFromContext(
+          require.context(
+            '../assets/klubbschackse?outputs[]=carousel',
+            true,
+            /.png$/,
+          ),
+        ),
+        tags: [
+          'Typescript',
+          'React.js',
+          'Cloudflare Workers',
+          'PostgreSQL',
+          'Supabase',
+        ],
+      },
+
+      {
+        company: 'Layke Analytics',
+        title: 'Web Developer',
+        link: 'https://laykeanalytics.com/',
+        icon: { src: laykeAnalyticsIcon, alt: 'Layke Analytics' },
+        time: { start: '2021-11-01', end: '2021-12-30' },
+        content: (
+          <p>
+            Layke Analytics provides a tool for smart candidate search across
+            different platforms. It uses artificial intelligence to make a
+            search or sourcing process more efficient. I made a simple dashboard
+            for viewing analytics, creating and handeling candidate and job ads
+            matches.
+          </p>
+        ),
+        images: getPictureFromContext(
+          require.context(
+            '../assets/layke-analytics?outputs[]=carousel',
+            true,
+            /.png$/,
+          ),
+        ),
+        tags: ['React.js', 'Typescript', 'MUI'],
+      },
+      {
         company: 'Svensk Travsport',
         title: 'Node Developer',
         link: 'https://travsport.se/',
         icon: { src: travsportIcon, alt: 'Svensk Travsport' },
-        time: { start: '2021-05-01' },
+        time: { start: '2021-05-01', end: '2021-10-31' },
         content: (
           <p>
             When the Swedish gaming monopoly was removed in 2019, Svensk
@@ -214,7 +295,7 @@ const experiences: Experience[] = [
 
       {
         company: 'Layke',
-        title: 'Lead Web Developer',
+        title: 'Web Developer',
         icon: { src: laykeIcon, alt: 'Layke' },
         time: { start: '2018-11-05', end: '2019-03-15' },
         content: (
