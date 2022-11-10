@@ -121,7 +121,7 @@ const experiences: Experience[] = [
             Layke Analytics provides a tool for smart candidate search across
             different platforms. It uses artificial intelligence to make a
             search or sourcing process more efficient. I made a simple dashboard
-            for viewing analytics, creating and handeling candidate and job ads
+            for viewing analytics, creating and handling candidate and job ads
             matches.
           </p>
         ),

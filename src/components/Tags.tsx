@@ -7,7 +7,7 @@ const tagsObject = {
   MongoDB: 'https://www.mongodb.com/',
   Redis: 'https://redis.io/',
   Polymer: 'https://www.polymer-project.org/',
-  Typescript: 'https://www.typescriptlang.org/',
+  TypeScript: 'https://www.typescriptlang.org/',
   'Vue.js': 'https://vuejs.org/',
   Vuex: 'https://vuex.vuejs.org/',
   Webpack: 'https://webpack.js.org/',
