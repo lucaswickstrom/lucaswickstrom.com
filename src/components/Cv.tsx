@@ -8,7 +8,7 @@ import linkedinIcon from '../assets/linkedin.svg';
 import liuIcon from '../assets/liu.svg';
 import nickamedIcon from '../assets/nicknamed.svg';
 // @ts-ignore
-import profilePhoto from '../assets/profile.jpg?outputs[]=profile';
+import profilePhoto from '../assets/profile.png?outputs[]=profile';
 import ssfIcon from '../assets/ssf.svg';
 import sveaIcon from '../assets/svea.svg';
 import tobeyIcon from '../assets/tobey.svg';
@@ -70,7 +70,7 @@ const experiences: Experience[] = [
           </p>
         ),
         tags: [
-          'Typescript',
+          'TypeScript',
           'React Native',
           'Cloudflare Workers',
           'PostgreSQL',
@@ -90,8 +90,8 @@ const experiences: Experience[] = [
           <p>
             The Swedish Chess Federation have for years collected chessclubs
             protocol and signatures by mail and scanned email. I helped them
-            with a fully digital solution with onscreen drawing box and onetime
-            links.
+            with a fully digital signing solution with onscreen drawing box and
+            onetime links.
           </p>
         ),
         images: getPictureFromContext(
@@ -102,7 +102,7 @@ const experiences: Experience[] = [
           ),
         ),
         tags: [
-          'Typescript',
+          'TypeScript',
           'React.js',
           'Cloudflare Workers',
           'PostgreSQL',
@@ -132,7 +132,7 @@ const experiences: Experience[] = [
             /.png$/,
           ),
         ),
-        tags: ['React.js', 'Typescript', 'MUI'],
+        tags: ['React.js', 'TypeScript', 'MUI'],
       },
       {
         company: 'Svensk Travsport',
@@ -150,7 +150,7 @@ const experiences: Experience[] = [
             adapting to them, as well as working with old file formats.
           </p>
         ),
-        tags: ['Node.js', 'Microservices', 'Typescript', 'Jest', 'RabbitMQ'],
+        tags: ['Node.js', 'Microservices', 'TypeScript', 'Jest', 'RabbitMQ'],
       },
 
       {
@@ -203,7 +203,7 @@ const experiences: Experience[] = [
           ),
         ),
         tags: [
-          'Typescript',
+          'TypeScript',
           'Node.js',
           'GraphQL',
           'Docker',
@@ -238,12 +238,12 @@ const experiences: Experience[] = [
             applying new translations to implementing design systems. Multiple
             business areas were coordinated to one authentication service. I was
             responsible for handling our connection. During the projects I added
-            Typescript, integrated accessibility checks with Storybook to our
+            TypeScript, integrated accessibility checks with Storybook to our
             process and implemented tracking.
           </p>
         ),
         tags: [
-          'Typescript',
+          'TypeScript',
           'Vue.js',
           'Vuex',
           'Webpack',
@@ -304,7 +304,7 @@ const experiences: Experience[] = [
             aggregating tabular data combined with dynamic graphs.
           </p>
         ),
-        tags: ['Typescript', 'React.js', 'D3.js', 'Docker'],
+        tags: ['TypeScript', 'React.js', 'D3.js', 'Docker'],
       },
 
       {
@@ -319,7 +319,7 @@ const experiences: Experience[] = [
           </p>
         ),
         tags: [
-          'Typescript',
+          'TypeScript',
           'React.js',
           'GatsbyJS',
           'SEO',

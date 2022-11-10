@@ -3,7 +3,7 @@ import React from 'react';
 
 import githubIcon from '../assets/github.svg';
 import linkedinIcon from '../assets/linkedin.svg';
-import profilePhoto from '../assets/profile.jpg';
+import profilePhoto from '../assets/profile.png';
 import { borderColor, Container } from '.';
 
 const size = 192;
