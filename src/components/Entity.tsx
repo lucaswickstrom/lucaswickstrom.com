@@ -1,120 +1,102 @@
-import { OutboundLink } from 'gatsby-plugin-google-gtag';
-import React from 'react';
+import { twMerge } from 'tailwind-merge';
+import { Circle } from './Circle';
+import { Container } from './Container';
+import { Wrapper } from './Wrapper';
+import { ComponentProps, ReactNode } from 'react';
+import { Time } from './Time';
+import { Tags } from './Tags';
+import Link from 'next/link';
+import Image, { StaticImageData } from 'next/image';
+import { EntityCarousel } from './EntityCarousel';
 
-import {
-  Carousel,
-  Container,
-  ExperienceWrapper,
-  Links,
-  Picture,
-  ProjectWrapper,
-  Tag,
-  Tags,
-  Time,
-} from '.';
-
-type Image = { src: string; alt: string };
-
-export type EntityProps = {
-  company?: string;
-  title: string;
-  link?: string;
-  icon?: Image;
-  time?: { start: string; end?: string; format?: 'year' | 'month' };
-  content?: React.ReactNode;
-  images?: Picture[];
-  tags?: Tag[];
-  keywords?: string;
-};
-
-const ConditionalWrap: React.FC<{
-  condition: boolean;
-  // eslint-disable-next-line no-unused-vars
-  wrap: (children: React.ReactNode) => JSX.Element;
-  // eslint-disable-next-line no-unused-vars
-  or?: (children: React.ReactNode) => JSX.Element;
-}> = ({ condition, wrap, or, children }) => (
-  <>{condition ? wrap(children) : or ? or(children) : children}</>
-);
-
-export const Entity: React.FC<
-  EntityProps & {
-    EntityComponent: typeof ExperienceWrapper | typeof ProjectWrapper;
-    lastItem?: boolean;
-    noLine?: boolean;
-  }
-> = ({
-  EntityComponent,
-  lastItem,
-  noLine,
-  icon,
-  link,
+export const Entity = ({
   company,
   title,
+  link,
+  icon,
+  iconAlt,
   time,
   content,
   images,
   tags,
   keywords,
-  children,
-}) => (
-  <>
-    <EntityComponent imgProps={icon} line={!noLine}>
-      <ConditionalWrap
-        condition={EntityComponent === ExperienceWrapper}
-        wrap={(child) => <h2>{child}</h2>}
-        or={(child) => <h3>{child}</h3>}
-      >
-        <ConditionalWrap
-          condition={!!link}
-          wrap={(child) => <OutboundLink href={link}>{child}</OutboundLink>}
-        >
-          {(company ? `${company} - ` : '') + title}
-        </ConditionalWrap>
-      </ConditionalWrap>
+  inside,
+  lineAbove,
+  lineBelow,
+}: {
+  company?: string;
+  title: string;
+  link?: string;
+  icon?: ComponentProps<typeof Circle>['src'];
+  iconAlt?: string;
+  time?: ComponentProps<typeof Time>;
+  content?: ReactNode;
+  images?: StaticImageData[];
+  tags?: ComponentProps<typeof Tags>['tags'];
+  keywords?: string;
+  inside?: boolean;
+  lineAbove?: boolean;
+  lineBelow?: boolean;
+}) => {
+  const Header = inside ? 'h3' : 'h2';
+  const headerTitle = [company, title].filter(Boolean).join(' - ');
 
-      {time && <Time {...time} />}
-    </EntityComponent>
-    {content && <Container line={!lastItem && !noLine}>{content}</Container>}
-    {images && (
-      <Container line={!lastItem && !noLine}>
-        <Carousel
-          naturalSlideWidth={images[0][0].width + 32}
-          naturalSlideHeight={images[0][0].height}
-          totalSlides={images.length}
+  return (
+    <>
+      <Container
+        className={twMerge('relative', !lineAbove && 'border-transparent')}
+      >
+        {inside && (
+          <div className='absolute border-l border-b border-foreground w-12 -mb-[calc(2rem] -left-[1px] top-0 h-20' />
+        )}
+        <Circle
+          src={icon}
+          alt={iconAlt || company || title}
+          size={inside ? 'sm' : 'md'}
+          className={twMerge('absolute -translate-x-1/2', inside && 'ml-12')}
+        />
+        <div
+          className={twMerge(
+            'w-full flex items-center',
+            inside
+              ? 'min-h-[4rem] pl-[4.5rem] md:pr-[4.5rem]'
+              : 'min-h-[6rem] pl-10 md:pr-10',
+          )}
         >
-          {images.map((picture, index) => (
-            <Picture
-              key={picture[0].url}
-              title={`${company} ${String(index + 1).padStart(2, '0')}`}
-              picture={picture}
-              height={images[0][0].height / 2}
-              width={images[0][0].width / 2}
-              css={{
-                width: 'auto',
-                height: 'auto',
-                maxWidth: 'calc(100vw - 50px)',
-                maxHeight: '100%',
-                boxShadow: '0 2px 4px 0 rgba(0,0,0,0.4)',
-                objectFit: 'contain',
-              }}
-            />
-          ))}
-        </Carousel>
+          <Wrapper>
+            <Header>
+              {link ? <Link href={link}>{headerTitle}</Link> : headerTitle}
+            </Header>
+            {time && <Time {...time} />}
+          </Wrapper>
+        </div>
       </Container>
-    )}
-    {tags && (
-      <Container line={!lastItem && !noLine}>
-        <Links>
-          <Tags tags={tags} />
-        </Links>
+      <Container
+        className={twMerge('py-0', !lineBelow && 'border-l-transparent')}
+      >
+        {content && <Wrapper className='py-3'>{content}</Wrapper>}
+        {images && (
+          <Wrapper className='py-3'>
+            <EntityCarousel data={images}>
+              {images.map((image, index) => (
+                <Image
+                  key={image.src}
+                  src={image}
+                  alt={`${company} ${(index + 1).toString().padStart(2, '0')}`}
+                  height={256}
+                  className='m-0 shadow cursor-pointer'
+                />
+              ))}
+            </EntityCarousel>
+          </Wrapper>
+        )}
+        {tags && (
+          <Wrapper className='py-3'>
+            <Tags tags={tags} />
+          </Wrapper>
+        )}
+        {keywords && <Wrapper className='py-3'>{keywords}</Wrapper>}
       </Container>
-    )}
-    {keywords && (
-      <Container line={!lastItem && !noLine}>
-        <Links>{keywords}</Links>
-      </Container>
-    )}
-    {children}
-  </>
-);
+    </>
+  );
+};

@@ -1,27 +1,28 @@
-import React from 'react';
+import { ComponentProps } from 'react';
+import { readdir } from 'node:fs/promises';
+import polytopIcon from '@/assets/polytop.svg';
+import laykeIcon from '@/assets/layke.svg';
+import laykeAnalyticsIcon from '@/assets/layke-analytics.svg';
+import liuIcon from '@/assets/liu.svg';
+import nickamedIcon from '@/assets/nicknamed.svg';
+import profilePhoto from '@/assets/profile.png';
+import ssfIcon from '@/assets/ssf.svg';
+import sveaIcon from '@/assets/svea.svg';
+import tobeyIcon from '@/assets/tobey.svg';
+import travsportIcon from '@/assets/travsport.svg';
+import wellrIcon from '@/assets/wellr.svg';
+import { Entity } from './Entity';
+import { Github, Linkedin } from 'lucide-react';
+import * as laykeAnalytics from '@/assets/layke-analytics';
+import * as klubbschackse from '@/assets/klubbschackse';
+import * as schackfyranOnline from '@/assets/schackfyran-online';
+import * as schackse from '@/assets/schackse';
+import * as sveacom from '@/assets/sveacom';
+import * as wellr from '@/assets/wellr';
+import * as yes2chess from '@/assets/yes2chess';
 
-import githubIcon from '../assets/github.svg';
-import polytopIcon from '../assets/image.svg';
-import laykeIcon from '../assets/layke.svg';
-import laykeAnalyticsIcon from '../assets/layke-analytics.svg';
-import linkedinIcon from '../assets/linkedin.svg';
-import liuIcon from '../assets/liu.svg';
-import nickamedIcon from '../assets/nicknamed.svg';
-// @ts-ignore
-import profilePhoto from '../assets/profile.png?outputs[]=profile';
-import ssfIcon from '../assets/ssf.svg';
-import sveaIcon from '../assets/svea.svg';
-import tobeyIcon from '../assets/tobey.svg';
-import travsportIcon from '../assets/travsport.svg';
-import wellrIcon from '../assets/wellr.svg';
-import { EntityProps, Picture } from '.';
-
-function getPictureFromContext(context: ReturnType<typeof require.context>) {
-  return context.keys().map((key) => context<Picture>(key));
-}
-
-type Project = EntityProps;
-export type Experience = EntityProps & { projects: Project[] };
+type Project = ComponentProps<typeof Entity>;
+export type Experience = Project & { projects: Project[] };
 
 const profile = {
   name: 'Lucas Wickström',
@@ -29,12 +30,14 @@ const profile = {
   photo: profilePhoto,
   links: [
     {
+      name: 'LinkedIn',
       link: 'https://linkedin.com/in/lucaswickstrom/',
-      icon: { src: linkedinIcon, alt: 'LinkedIn' },
+      Icon: Linkedin,
     },
     {
+      name: 'Github',
       link: 'https://github.com/lucaswickstrom/',
-      icon: { src: githubIcon, alt: 'Github' },
+      Icon: Github,
     },
   ],
   title: "Hi, I'm Lucas",
@@ -52,14 +55,14 @@ const profile = {
 const experiences: Experience[] = [
   {
     title: 'Polytop',
-    icon: { src: polytopIcon, alt: 'Polytop' },
+    icon: polytopIcon,
     time: { start: '2018-12-20' },
     projects: [
       {
         company: 'Tobey Rentech',
-        title: 'Founder and developer',
+        title: 'Co-founder and developer',
         link: 'https://tobey.io/',
-        icon: { src: tobeyIcon, alt: 'Tobey Rentech' },
+        icon: tobeyIcon,
         time: { start: '2022-07-01' },
         content: (
           <p>
@@ -84,7 +87,7 @@ const experiences: Experience[] = [
         company: 'Sveriges Schackförbund',
         title: 'Full-Stack Web Developer',
         link: 'https://klubb.schack.se',
-        icon: { src: ssfIcon, alt: 'Sveriges Schackförbund' },
+        icon: ssfIcon,
         time: { start: '2022-01-01', end: '2022-06-30' },
         content: (
           <p>
@@ -94,13 +97,7 @@ const experiences: Experience[] = [
             onetime links.
           </p>
         ),
-        images: getPictureFromContext(
-          require.context(
-            '../assets/klubbschackse?outputs[]=carousel',
-            true,
-            /.png$/,
-          ),
-        ),
+        images: Object.values(klubbschackse),
         tags: [
           'TypeScript',
           'React.js',
@@ -114,7 +111,7 @@ const experiences: Experience[] = [
         company: 'Layke Analytics',
         title: 'Web Developer',
         link: 'https://laykeanalytics.com/',
-        icon: { src: laykeAnalyticsIcon, alt: 'Layke Analytics' },
+        icon: laykeAnalyticsIcon,
         time: { start: '2021-11-01', end: '2021-12-30' },
         content: (
           <p>
@@ -125,20 +122,14 @@ const experiences: Experience[] = [
             matches.
           </p>
         ),
-        images: getPictureFromContext(
-          require.context(
-            '../assets/layke-analytics?outputs[]=carousel',
-            true,
-            /.png$/,
-          ),
-        ),
+        images: Object.values(laykeAnalytics),
         tags: ['React.js', 'TypeScript', 'MUI'],
       },
       {
         company: 'Svensk Travsport',
         title: 'Node Developer',
         link: 'https://travsport.se/',
-        icon: { src: travsportIcon, alt: 'Svensk Travsport' },
+        icon: travsportIcon,
         time: { start: '2021-05-01', end: '2021-10-31' },
         content: (
           <p>
@@ -157,7 +148,7 @@ const experiences: Experience[] = [
         company: 'Wellr',
         title: 'React Native Developer',
         link: 'https://wellr.se/',
-        icon: { src: wellrIcon, alt: 'Wellr' },
+        icon: wellrIcon,
         time: { start: '2020-09-10', end: '2021-02-28' },
         content: (
           <p>
@@ -169,9 +160,7 @@ const experiences: Experience[] = [
             record app crashes and log exceptions.
           </p>
         ),
-        images: getPictureFromContext(
-          require.context('../assets/wellr?outputs[]=carousel', true, /\.png$/),
-        ),
+        images: Object.values(wellr),
         tags: ['React Native', 'Redux', 'Sentry'],
       },
 
@@ -179,7 +168,8 @@ const experiences: Experience[] = [
         company: 'Schackfyran Online',
         title: 'Full-Stack Web Developer',
         link: 'https://play.schackfyran.se',
-        icon: { src: ssfIcon, alt: 'Sveriges Schackförbund' },
+        icon: ssfIcon,
+        iconAlt: 'Sveriges Schackförbund',
         time: { start: '2020-03-10', end: '2020-08-31' },
         content: (
           <p>
@@ -195,13 +185,7 @@ const experiences: Experience[] = [
             every year.
           </p>
         ),
-        images: getPictureFromContext(
-          require.context(
-            '../assets/schackfyran-online?outputs[]=carousel',
-            true,
-            /.png$/,
-          ),
-        ),
+        images: Object.values(schackfyranOnline),
         tags: [
           'TypeScript',
           'Node.js',
@@ -219,14 +203,14 @@ const experiences: Experience[] = [
   {
     title: 'Nicknamed',
     link: 'https://nicknamed.se/',
-    icon: { src: nickamedIcon, alt: 'Nicknamed' },
+    icon: nickamedIcon,
     time: { start: '2018-06-01', end: '2021-03-31' },
     projects: [
       {
         company: 'Svea Ekonomi',
         title: 'Web Developer',
         link: 'https://www.svea.com/se/sv/foretag/betallosningar/betallosningar-for-e-handel/for-dig-som-handlat/',
-        icon: { src: sveaIcon, alt: 'Svea Ekonomi' },
+        icon: sveaIcon,
         time: { start: '2019-10-25', end: '2021-03-31' },
         content: (
           <p>
@@ -260,7 +244,7 @@ const experiences: Experience[] = [
         company: 'Svea Ekonomi',
         title: 'Full-Stack Web Developer',
         link: 'https://www.svea.com/',
-        icon: { src: sveaIcon, alt: 'Svea Ekonomi' },
+        icon: sveaIcon,
         time: { start: '2019-03-16', end: '2019-08-31' },
         content: (
           <p>
@@ -274,13 +258,7 @@ const experiences: Experience[] = [
             traffic was stable even despite fierce competition.
           </p>
         ),
-        images: getPictureFromContext(
-          require.context(
-            '../assets/sveacom?outputs[]=carousel',
-            true,
-            /\.png$/,
-          ),
-        ),
+        images: Object.values(sveacom),
         tags: [
           'Episerver',
           'C#',
@@ -296,7 +274,7 @@ const experiences: Experience[] = [
       {
         company: 'Layke',
         title: 'Web Developer',
-        icon: { src: laykeIcon, alt: 'Layke' },
+        icon: laykeIcon,
         time: { start: '2018-11-05', end: '2019-03-15' },
         content: (
           <p>
@@ -310,7 +288,7 @@ const experiences: Experience[] = [
       {
         company: 'Svea Ekonomi',
         title: 'Web Developer',
-        icon: { src: sveaIcon, alt: 'Svea Ekonomi' },
+        icon: sveaIcon,
         time: { start: '2018-06-01', end: '2018-11-04' },
         content: (
           <p>
@@ -333,7 +311,7 @@ const experiences: Experience[] = [
     company: 'Sveriges Schackförbund',
     title: 'Web Developer',
     link: 'https://schack.se/',
-    icon: { src: ssfIcon, alt: 'Sveriges Schackförbund' },
+    icon: ssfIcon,
     time: { start: '2015-05-25', end: '2018-05-31' },
     content: (
       <p>
@@ -356,16 +334,9 @@ const experiences: Experience[] = [
             4&nbsp;000 kids played more than 20&nbsp;000 games of chess.
           </p>
         ),
-        images: getPictureFromContext(
-          require.context(
-            '../assets/yes2chess?outputs[]=carousel',
-            true,
-            /\.png$/,
-          ),
-        ),
+        images: Object.values(yes2chess),
         tags: ['Node.js', 'MongoDB', 'Polymer', 'Websocket', 'Mocha', 'Git'],
       },
-
       {
         title: 'Member and tournament system',
         link: 'https://member.schack.se',
@@ -388,13 +359,7 @@ const experiences: Experience[] = [
             more than 10&nbsp;000 daily pageviews.
           </p>
         ),
-        images: getPictureFromContext(
-          require.context(
-            '../assets/schackse?outputs[]=carousel',
-            true,
-            /\.png$/,
-          ),
-        ),
+        images: Object.values(schackse),
         tags: ['PHP', 'MySQL', 'Wordpress', 'jQuery'],
       },
     ],
@@ -418,7 +383,8 @@ const experiences: Experience[] = [
 const studies: Experience[] = [
   {
     title: 'Institute of Technology: Linköping University',
-    icon: { src: liuIcon, alt: 'Linköping University' },
+    icon: liuIcon,
+    iconAlt: 'Linköping University',
     time: { start: '2011-08-20', end: '2015-06-14', format: 'year' },
     content: <p>Computer Science</p>,
     keywords: 'Activities and Societies: D-Group, Flamman',

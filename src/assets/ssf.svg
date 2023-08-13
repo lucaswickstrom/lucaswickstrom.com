@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 400 400" style="enable-background:new 0 0 400 400;" xml:space="preserve">
+	 	<circle cx="200" cy="200" r="200" fill="#FFF" />
 <g fill="#1D1D1B">
 	<path d="M200,0C89.5,0,0,89.5,0,200c0,110.5,89.5,200,200,200c110.5,0,200-89.5,200-200C400,89.5,310.5,0,200,0z
 		 M200,389.8C95.3,389.8,10.2,304.7,10.2,200C10.2,95.3,95.3,10.2,200,10.2c104.7,0,189.9,85.2,189.9,189.8

@@ -1,17 +1,12 @@
-import styled from '@emotion/styled';
+import { ComponentProps } from 'react';
+import { twMerge } from 'tailwind-merge';
 
-import { bigScreen } from '.';
-
-export const Wrapper = styled.div({
-  display: 'flex',
-  flexDirection: 'column',
-  alignItems: 'center',
-  maxWidth: 1030,
-  padding: '48px 16px 256px',
-  margin: '0 auto',
-
-  [bigScreen]: {
-    paddingLeft: 48,
-    paddingRight: 48,
-  },
-});
+export const Wrapper = (props: ComponentProps<'div'>) => (
+  <div
+    {...props}
+    className={twMerge(
+      'max-w-2xl w-full mx-auto prose dark:prose-invert pl-4 sm:pr-4',
+      props.className,
+    )}
+  />
+);

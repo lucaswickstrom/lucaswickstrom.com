@@ -1,5 +1,5 @@
-import { OutboundLink } from 'gatsby-plugin-google-gtag';
-import React from 'react';
+import Link from 'next/link';
+import React, { Fragment } from 'react';
 
 const tagsObject = {
   'React Native': 'https://reactnative.dev/',
@@ -54,15 +54,13 @@ const tagsObject = {
 
 export type Tag = keyof typeof tagsObject;
 
-export const Tags: React.FC<{ tags: (keyof typeof tagsObject)[] }> = ({
-  tags,
-}) => (
+export const Tags = ({ tags }: { tags: (keyof typeof tagsObject)[] }) => (
   <>
     {tags.map((key, index) => (
-      <React.Fragment key={key}>
+      <Fragment key={key}>
         {index ? ', ' : ''}
-        <OutboundLink href={tagsObject[key]}>{key}</OutboundLink>
-      </React.Fragment>
+        <Link href={tagsObject[key]}>{key}</Link>
+      </Fragment>
     ))}
   </>
 );

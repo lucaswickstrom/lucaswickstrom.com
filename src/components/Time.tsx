@@ -1,4 +1,4 @@
-import React from 'react';
+import { ComponentProps } from 'react';
 
 const day = 1000 * 60 * 60 * 24;
 
@@ -7,7 +7,7 @@ const getMonth = (date: Date) =>
     .toLocaleDateString('en-GB', {
       month: 'short',
     })
-    .substr(0, 3);
+    .substring(0, 3);
 
 const getMonthAndYear = (date: Date) =>
   `${getMonth(date)} ${date.getFullYear()}`;
@@ -35,16 +35,22 @@ const getMonthAndYearDiff = (date1: Date, date2: Date) => {
   );
 };
 
-export const Time: React.FC<{
+export const Time = ({
+  start,
+  end,
+  format = 'month',
+  hideLength,
+  ...props
+}: {
   start: string;
   end?: string;
   format?: 'year' | 'month';
   hideLength?: boolean;
-}> = ({ start, end, format = 'month', hideLength }) => {
+} & ComponentProps<'span'>) => {
   const startDate = new Date(start);
   const endDate = new Date(end || Date.now());
   return (
-    <span>
+    <span {...props}>
       {format === 'year' ? (
         `${startDate.getFullYear()} - ${
           endDate ? endDate.getFullYear() : 'Present'

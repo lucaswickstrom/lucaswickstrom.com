@@ -1,21 +1,12 @@
-import styled from '@emotion/styled';
+import { ComponentProps } from 'react';
+import { twMerge } from 'tailwind-merge';
 
-import { borderColor } from '.';
-
-export const Container = styled.div<{ line?: boolean }>(({ line }) => [
-  {
-    width: '100%',
-    padding: '0 16px',
-    '> *': {
-      maxWidth: 600,
-      margin: '12px auto',
-    },
-  },
-  line
-    ? {
-        borderLeft: `1px solid ${borderColor}`,
-      }
-    : {
-        paddingLeft: 17,
-      },
-]);
+export const Container = (props: ComponentProps<'div'>) => (
+  <div
+    {...props}
+    className={twMerge(
+      'max-w-4xl mx-auto w-full border-l border-foreground pt-12',
+      props.className,
+    )}
+  />
+);
