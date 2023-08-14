@@ -8,6 +8,20 @@ import { ReactNode } from 'react';
 
 import { twMerge } from 'tailwind-merge';
 
+export const runtime = 'edge';
+
+export const metadata: Metadata = {
+  themeColor: [
+    { media: '(prefers-color-scheme: light)', color: 'white' },
+    { media: '(prefers-color-scheme: dark)', color: 'black' },
+  ],
+  icons: {
+    icon: '/favicon.ico',
+    apple: '/apple-touch-icon.png',
+  },
+  manifest: '/manifest.json',
+};
+
 const inter = Inter({ subsets: ['latin'] });
 
 export default function RootLayout({ children }: { children: ReactNode }) {
