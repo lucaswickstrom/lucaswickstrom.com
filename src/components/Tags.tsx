@@ -50,6 +50,7 @@ const tagsObject = {
   Supabase: 'https://supabase.com/',
   Swish: 'https://www.swish.nu/',
   'Bluetooth Low Energy': 'https://en.wikipedia.org/wiki/Bluetooth_Low_Energy',
+  BankID: 'https://www.bankid.com/',
 };
 
 export type Tag = keyof typeof tagsObject;

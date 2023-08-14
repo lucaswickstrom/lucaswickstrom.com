@@ -1,5 +1,4 @@
 import { ComponentProps } from 'react';
-import { readdir } from 'node:fs/promises';
 import polytopIcon from '@/assets/polytop.svg';
 import laykeIcon from '@/assets/layke.svg';
 import laykeAnalyticsIcon from '@/assets/layke-analytics.svg';
@@ -11,6 +10,7 @@ import sveaIcon from '@/assets/svea.svg';
 import tobeyIcon from '@/assets/tobey.svg';
 import travsportIcon from '@/assets/travsport.svg';
 import wellrIcon from '@/assets/wellr.svg';
+import skuldebrevIcon from '@/assets/skuldebrev.svg';
 import { Entity } from './Entity';
 import { Github, Linkedin } from 'lucide-react';
 import * as laykeAnalytics from '@/assets/layke-analytics';
@@ -20,6 +20,8 @@ import * as schackse from '@/assets/schackse';
 import * as sveacom from '@/assets/sveacom';
 import * as wellr from '@/assets/wellr';
 import * as yes2chess from '@/assets/yes2chess';
+import * as skuldebrev from '@/assets/skuldebrev';
+import * as tobey from '@/assets/tobey';
 
 type Project = ComponentProps<typeof Entity>;
 export type Experience = Project & { projects: Project[] };
@@ -59,9 +61,31 @@ const experiences: Experience[] = [
     time: { start: '2018-12-20' },
     projects: [
       {
+        company: 'Skuldebrev',
+        title: 'Co-founder and developer',
+        link: 'https://skuldebrev.com',
+        icon: skuldebrevIcon,
+        time: { start: '2023-06-01' },
+        content: (
+          <p>
+            Skuldebrev is an innovative online service designed to streamline
+            the process of creating and managing promissory notes in Sweden. The
+            platform offers a convenient and secure way for users to generate
+            promissory notes, sign them using the BankID electronic
+            identification system, and facilitate payments using Swish. This
+            service simplifies the traditionally cumbersome process of creating
+            and handling promissory notes, providing users with a modern and
+            efficient solution for financial transactions.
+          </p>
+        ),
+        images: Object.values(skuldebrev),
+        tags: ['TypeScript', 'Next.js', 'PostgreSQL', 'BankID', 'Swish'],
+      },
+
+      {
         company: 'Tobey Rentech',
         title: 'Co-founder and developer',
-        link: 'https://tobey.io/',
+        link: 'https://tobey.io',
         icon: tobeyIcon,
         time: { start: '2022-07-01' },
         content: (
@@ -72,6 +96,7 @@ const experiences: Experience[] = [
             founders.
           </p>
         ),
+        images: Object.values(tobey),
         tags: [
           'TypeScript',
           'React Native',
