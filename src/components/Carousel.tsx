@@ -1,15 +1,15 @@
 'use client';
 
 import {
-  DragHandlers,
-  MotionValue,
+  type DragHandlers,
+  type MotionValue,
   animate,
   motion,
   useMotionValue,
 } from 'framer-motion';
 import {
   Children,
-  ReactElement,
+  type ReactElement,
   cloneElement,
   useCallback,
   useMemo,
@@ -50,18 +50,18 @@ export const Carousel = ({
     }, 0);
 
     animate(x, closest);
-  }, [snapPoints]);
+  }, [snapPoints, x]);
 
   return (
     <motion.div
-      drag='x'
+      drag="x"
       dragConstraints={{ left: snapPoints[snapPoints.length - 1], right: 0 }}
       animate={_animate}
       variants={Object.fromEntries(
         snapPoints.map((point, index) => [`point${index}`, { x: point }]),
       )}
       onDragEnd={onDragEnd}
-      className='flex gap-3'
+      className="flex gap-3"
       style={{ width: 'max-content', x }}
     >
       {Children.map(children, (child) =>

@@ -1,19 +1,19 @@
 'use client';
 
+import * as Dialog from '@radix-ui/react-dialog';
+import { motion, useMotionValue } from 'framer-motion';
+import { X } from 'lucide-react';
+import Image, { type StaticImageData } from 'next/image';
 import {
   Children,
-  MouseEvent,
-  ReactElement,
+  type MouseEvent,
+  type ReactElement,
   cloneElement,
   useRef,
   useState,
 } from 'react';
-import { Carousel } from './Carousel';
-import * as Dialog from '@radix-ui/react-dialog';
 import { useWindowSize } from 'usehooks-ts';
-import Image, { StaticImageData } from 'next/image';
-import { X } from 'lucide-react';
-import { motion, useMotionValue } from 'framer-motion';
+import { Carousel } from './Carousel';
 
 export const EntityCarousel = ({
   children,
@@ -50,14 +50,14 @@ export const EntityCarousel = ({
         )}
       </Carousel>
       <Dialog.Portal>
-        <Dialog.Overlay className='bg-black/30 fixed inset-0' asChild>
+        <Dialog.Overlay className="bg-black/30 fixed inset-0" asChild>
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
           />
         </Dialog.Overlay>
-        <Dialog.Content className='fixed inset-0' asChild>
+        <Dialog.Content className="fixed inset-0" asChild>
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -74,16 +74,16 @@ export const EntityCarousel = ({
                   key={image.src}
                   src={image}
                   alt={`Image ${index + 1}`}
-                  objectFit='contain'
-                  objectPosition='center'
+                  objectFit="contain"
+                  objectPosition="center"
                   width={width}
                   height={height}
-                  className='p-0 md:p-12 h-screen w-screen object-contain'
-                  placeholder='blur'
+                  className="p-0 md:p-12 h-screen w-screen object-contain"
+                  placeholder="blur"
                 />
               ))}
             </Carousel>
-            <Dialog.Close className='absolute top-0 right-0 m-4'>
+            <Dialog.Close className="absolute top-0 right-0 m-4">
               <X />
             </Dialog.Close>
           </motion.div>

@@ -25,7 +25,7 @@
     --ring: 221.2 83.2% 53.3%;
     --radius: 0.5rem;
   }
- 
+
   .dark {
     --background: 222.2 84% 4.9%;
     --foreground: 210 40% 98%;
@@ -52,15 +52,14 @@
 @layer base {
   * {
     @apply box-border;
-    transition: background-color, border-color, text-decoration-color, fill, stroke;
+    transition: background-color, border-color, text-decoration-color, fill,
+      stroke;
     transition-duration: 300ms;
     transition-timing-function: ease-in-out;
   }
   body {
     @apply bg-background text-foreground;
-    font-feature-settings:
-      "rlig" 1,
-      "calt" 1;
+    font-feature-settings: "rlig" 1, "calt" 1;
   }
 }
 
@@ -78,12 +77,28 @@
 }
 
 @keyframes wave-animation {
-    0% { transform: rotate( 0.0deg) }
-    1% { transform: rotate(14.0deg) }
-    2% { transform: rotate(-8.0deg) }
-    3% { transform: rotate(14.0deg) }
-    4% { transform: rotate(-4.0deg) }
-    5% { transform: rotate(10.0deg) }
-    6% { transform: rotate( 0.0deg) }
-  100% { transform: rotate( 0.0deg) }
+  0% {
+    transform: rotate(0.0deg);
+  }
+  1% {
+    transform: rotate(14.0deg);
+  }
+  2% {
+    transform: rotate(-8.0deg);
+  }
+  3% {
+    transform: rotate(14.0deg);
+  }
+  4% {
+    transform: rotate(-4.0deg);
+  }
+  5% {
+    transform: rotate(10.0deg);
+  }
+  6% {
+    transform: rotate(0.0deg);
+  }
+  100% {
+    transform: rotate(0.0deg);
+  }
 }

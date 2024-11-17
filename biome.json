@@ -1,5 +1,5 @@
 {
-  "$schema": "https://docs.rome.tools/schemas/12.1.3/schema.json",
+  "$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
   "organizeImports": {
     "enabled": true
   },
@@ -15,7 +15,7 @@
   },
   "javascript": {
     "formatter": {
-      "trailingComma": "all",
+      "trailingCommas": "all",
       "semicolons": "always",
       "quoteStyle": "single"
     }

@@ -1,13 +1,13 @@
+import Image, { type StaticImageData } from 'next/image';
+import Link from 'next/link';
+import type { ComponentProps, ReactNode } from 'react';
 import { twMerge } from 'tailwind-merge';
 import { Circle } from './Circle';
 import { Container } from './Container';
-import { Wrapper } from './Wrapper';
-import { ComponentProps, ReactNode } from 'react';
-import { Time } from './Time';
-import { Tags } from './Tags';
-import Link from 'next/link';
-import Image, { StaticImageData } from 'next/image';
 import { EntityCarousel } from './EntityCarousel';
+import { Tags } from './Tags';
+import { Time } from './Time';
+import { Wrapper } from './Wrapper';
 
 export const Entity = ({
   company,
@@ -47,7 +47,7 @@ export const Entity = ({
         className={twMerge('relative', !lineAbove && 'border-transparent')}
       >
         {inside && (
-          <div className='absolute border-l border-b border-foreground w-12 -mb-[calc(2rem] -left-[1px] top-0 h-20' />
+          <div className="absolute border-l border-b border-foreground w-12 -mb-[calc(2rem] -left-[1px] top-0 h-20" />
         )}
         <Circle
           src={icon}
@@ -74,9 +74,9 @@ export const Entity = ({
       <Container
         className={twMerge('py-0', !lineBelow && 'border-l-transparent')}
       >
-        {content && <Wrapper className='py-3'>{content}</Wrapper>}
+        {content && <Wrapper className="py-3">{content}</Wrapper>}
         {images && (
-          <Wrapper className='py-3'>
+          <Wrapper className="py-3">
             <EntityCarousel data={images}>
               {images.map((image, index) => (
                 <Image
@@ -84,18 +84,18 @@ export const Entity = ({
                   src={image}
                   alt={`${company} ${(index + 1).toString().padStart(2, '0')}`}
                   height={256}
-                  className='m-0 shadow cursor-pointer'
+                  className="m-0 shadow cursor-pointer"
                 />
               ))}
             </EntityCarousel>
           </Wrapper>
         )}
         {tags && (
-          <Wrapper className='py-3'>
+          <Wrapper className="py-3">
             <Tags tags={tags} />
           </Wrapper>
         )}
-        {keywords && <Wrapper className='py-3'>{keywords}</Wrapper>}
+        {keywords && <Wrapper className="py-3">{keywords}</Wrapper>}
       </Container>
     </>
   );

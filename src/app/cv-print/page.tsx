@@ -1,7 +1,7 @@
 import { cv } from '@/components/Cv';
 import { Time } from '@/components/Time';
 import { Globe, Mail, Phone } from 'lucide-react';
-import { Metadata } from 'next';
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Fragment } from 'react';
 import { twMerge } from 'tailwind-merge';
@@ -19,7 +19,7 @@ export default function CvPrint() {
         )}
       >
         <h1>{cv.name}</h1>
-        <ul className='list-none p-0'>
+        <ul className="list-none p-0">
           {(
             [
               [`tel:${cv.phone}`, Phone, cv.phone],
@@ -27,9 +27,9 @@ export default function CvPrint() {
               [`https://${cv.website}`, Globe, cv.website],
             ] as const
           ).map(([href, Icon, title]) => (
-            <li key={href} className='m-0'>
-              <Link href={href} className='flex items-center my-1'>
-                <Icon className='h-4 w-4 mr-1' />
+            <li key={href} className="m-0">
+              <Link href={href} className="flex items-center my-1">
+                <Icon className="h-4 w-4 mr-1" />
                 {title}
               </Link>
             </li>
@@ -43,7 +43,7 @@ export default function CvPrint() {
         {cv.experiences.map((experience) => (
           <Fragment key={experience.title.replace(' ', '-')}>
             {experience.content && (
-              <div className='break-inside-avoid'>
+              <div className="break-inside-avoid">
                 <h3>
                   {[experience.company, experience.title]
                     .filter(Boolean)
@@ -59,11 +59,8 @@ export default function CvPrint() {
                 {experience.tags && (
                   <p>
                     {experience.tags.map((tag) => (
-                      <Fragment>
-                        <span
-                          key={tag}
-                          className='text-[0.8rem] px-[2.4mm] py-[1mm] bg-[#DDD] leading-[1.6rem] rounded-full whitespace-nowrap'
-                        >
+                      <Fragment key={tag}>
+                        <span className="text-[0.8rem] px-[2.4mm] py-[1mm] bg-[#DDD] leading-[1.6rem] rounded-full whitespace-nowrap">
                           {tag}
                         </span>{' '}
                       </Fragment>
@@ -75,7 +72,7 @@ export default function CvPrint() {
             {experience.projects.map((project) => (
               <div
                 key={project.title.replace(' ', '-')}
-                className='break-inside-avoid'
+                className="break-inside-avoid"
               >
                 {experience.content ? (
                   <h4>
@@ -94,7 +91,7 @@ export default function CvPrint() {
                   <Time
                     {...project.time}
                     hideLength={!project.time.end}
-                    className='text-sm'
+                    className="text-sm"
                   />
                 )}
                 {project.content}
@@ -102,11 +99,8 @@ export default function CvPrint() {
                 {project.tags && (
                   <p>
                     {project.tags.map((tag) => (
-                      <Fragment>
-                        <span
-                          key={tag}
-                          className='text-[0.8rem] px-[2.4mm] py-[1mm] bg-[#DDD] leading-[1.6rem] rounded-full whitespace-nowrap'
-                        >
+                      <Fragment key={tag}>
+                        <span className="text-[0.8rem] px-[2.4mm] py-[1mm] bg-[#DDD] leading-[1.6rem] rounded-full whitespace-nowrap">
                           {tag}
                         </span>{' '}
                       </Fragment>
