@@ -1,5 +1,6 @@
 import { ComponentProps } from 'react';
 import polytopIcon from '@/assets/polytop.svg';
+import napperIcon from '@/assets/napper.svg';
 import laykeIcon from '@/assets/layke.svg';
 import laykeAnalyticsIcon from '@/assets/layke-analytics.svg';
 import liuIcon from '@/assets/liu.svg';
@@ -20,6 +21,7 @@ import * as sveacom from '@/assets/sveacom';
 import * as wellr from '@/assets/wellr';
 import * as yes2chess from '@/assets/yes2chess';
 import * as tobey from '@/assets/tobey';
+import * as napper from '@/assets/napper';
 
 type Project = ComponentProps<typeof Entity>;
 export type Experience = Project & { projects: Project[] };
@@ -53,6 +55,25 @@ const profile = {
 };
 
 const experiences: Experience[] = [
+  {
+    company: 'Napper',
+    title: 'React Native Developer',
+    link: 'https://napper.app/',
+    icon: napperIcon,
+    time: { start: '2024-04-01' },
+    content: (
+      <p>
+        Napper is a rapidly growing Swedish startup that helps parents improve
+        their babies' sleep through AI-powered solutions. Their app has reached
+        over a million parents worldwide and is an Apple Editors' Choice app. I
+        work in the engineering team developing and improving the mobile
+        application experience.
+      </p>
+    ),
+    images: Object.values(napper),
+    tags: ['React Native', 'TypeScript'],
+    projects: [],
+  },
   {
     title: 'Polytop',
     icon: polytopIcon,
