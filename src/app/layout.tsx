@@ -9,8 +9,6 @@ import type { ReactNode } from 'react';
 import Script from 'next/script';
 import { twMerge } from 'tailwind-merge';
 
-export const runtime = 'edge';
-
 export const viewport: Viewport = {
   themeColor: [
     { media: '(prefers-color-scheme: light)', color: 'white' },
