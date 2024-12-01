@@ -36,11 +36,6 @@ export const EntityCarousel = ({
               startEventTime.current = event.timeStamp;
             },
             onClick(event: MouseEvent) {
-              console.log(
-                startEventTime.current,
-                event.timeStamp,
-                startEventTime.current + 200 > event.timeStamp,
-              );
               if (startEventTime.current + 200 > event.timeStamp) {
                 setAnimate(`point${index}`);
                 setOpen(true);
