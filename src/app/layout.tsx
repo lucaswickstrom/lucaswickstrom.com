@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   manifest: '/manifest.json',
 };
 
-const inter = Inter({ subsets: ['latin'] });
+const inter = Inter({ subsets: ['latin'], display: 'swap' });
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
